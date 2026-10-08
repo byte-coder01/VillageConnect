@@ -284,6 +284,15 @@ h3 { font: 600 1.25rem/1.2 'Playfair Display', Georgia, serif; }
 .board-panel { padding: 1.4rem; border: 1px solid var(--line); background: white; }
 .board-panel h2 { font-size: 1.8rem; }.board-panel p { color: var(--muted); font-size: .74rem; line-height: 1.7; }
 .board-empty { display: grid; place-items: center; min-height: 190px; padding: 1.5rem; text-align: center; background: #f4f3eb; }.board-empty span { font-size: 1.6rem; color: var(--coral); }.board-empty b { margin: .5rem 0 .2rem; font: 600 1.2rem 'Playfair Display', Georgia, serif; }.board-empty small { max-width: 300px; margin-top: .28rem; color: var(--muted); font-size: .62rem; }.board-empty .button { margin-top: .85rem; }.board-empty .button span { margin: 0; color: #fff; font-size: 1.1rem; }
+.notice-board-list { display: grid; gap: .6rem; min-height: 0; width: 100%; box-sizing: border-box; padding: .7rem .8rem .8rem; text-align: left; place-items: stretch; align-items: stretch; justify-items: stretch; }
+.sample-notice { width: 100%; padding: .6rem .7rem; border: 1px solid rgba(15, 54, 42, .12); border-radius: 10px; background: rgba(255,255,255,.55); box-sizing: border-box; }
+.sample-notice h3 { margin: .35rem 0 .18rem; font-size: .74rem; line-height: 1.28; }
+.sample-notice p { margin: 0; color: var(--muted); font-size: .5rem; line-height: 1.5; }
+.sample-notice-meta { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+.board-empty .notice-tag { display: inline-flex; align-items: center; padding: .15rem .34rem; border-radius: 999px; background: color-mix(in srgb, var(--coral) 14%, transparent); color: var(--coral-dark); font-size: .38rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.sample-notice time { color: var(--muted); font-size: .46rem; font-weight: 600; }
+.notice-board-list .button { justify-self: center; width: fit-content; margin-top: .1rem; }
+html.night-mode body:not(.high-contrast) .sample-notice { background: rgba(27, 33, 31, .6); border-color: rgba(255,255,255,.08); }
 .board-categories { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1rem; }.board-categories span { padding: .42rem .62rem; border-radius: 100px; background: #edf2eb; color: #5f746b; font-size: .56rem; font-weight: 700; }
 .feedback-layout { display: grid; grid-template-columns: 1.15fr .85fr; gap: 3rem; align-items: start; }
 .feedback-form-card { padding: 1.7rem; border: 1px solid var(--line); background: #f7f5ee; }
