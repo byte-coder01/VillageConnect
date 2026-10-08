@@ -47,3 +47,7 @@ The files can be hosted on GitHub Pages because the site is static. Create a Git
 - Feedback is not connected to an inbox or database yet. The current form prepares a message draft for the visitor to copy. To receive submissions, connect a form service such as Formspree or embed a Google Form.
 - Community notices and local listings should be verified and connected to a trusted source before treating the portal as a live public service.
 
+
+## Branding
+
+- `favicon.svg` — Shared VillageConnect favicon used by every HTML page.
