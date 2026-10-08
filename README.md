@@ -30,7 +30,7 @@ The site is a static frontend and does not require a build step or application s
 - `map.html` — Searchable map centered by default on Pauri Garhwal.
 - `events.html` — Community notices and public event discovery.
 - `feedback.html` — Suggestion form.
-- `accessibility.html` — Display and motion settings.
+- `settings.html` — Display and motion settings.
 - `portal.html` — Compatibility redirect to the main home page.
 
 ## Run locally
