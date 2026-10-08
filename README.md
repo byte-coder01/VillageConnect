@@ -43,11 +43,17 @@ The files can be hosted on GitHub Pages because the site is static. Create a Git
 
 ## Important notes
 
+- VillageConnect is an independent community information portal, not a government website or emergency service. Verify important information with the responsible local organization.
+
 - Google Maps provides map data and search results. The optional location button requests browser permission; coordinates are sent directly to Google Maps to load results.
-- Feedback is not connected to an inbox or database yet. The current form prepares a message draft for the visitor to copy. To receive submissions, connect a form service such as Formspree or embed a Google Form.
+- Feedback is not connected to an inbox or database yet. The current form creates a message draft on the visitor's device for copying; it does not transmit the submission. To receive submissions, connect a form service such as Formspree or embed a Google Form.
 - Community notices and local listings should be verified and connected to a trusted source before treating the portal as a live public service.
 
 
 ## Branding
 
 - `favicon.svg` — Shared VillageConnect favicon used by every HTML page.
+
+## Regional notice board
+
+The Updates page now accepts a region/state, area/district, and 6-digit PIN code. The selected location updates the Google Maps panel and triggers a check of configured official government notice pages. Pauri Garhwal is configured for its District NIC notice and meetings pages, with an official-source fallback so the board never invents notices. GitHub Pages cannot run a server-side scraper; the browser first attempts direct access and then uses the browser-friendly Jina Reader relay when a government site does not allow cross-origin access. Notices always link back to the official government source.
