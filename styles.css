@@ -592,3 +592,280 @@ html.night-mode body:not(.high-contrast) #notice-current-location:focus-visible 
   background: #cf5940;
   border-color: #cf5940;
 }
+/* VillageConnect: combined night-mode and high-contrast accessibility palette. */
+
+html.night-mode body.high-contrast {
+  --ink: #ffffff;
+  --forest: #000000;
+  --forest-light: #242424;
+  --coral: #ffd400;
+  --coral-dark: #ffe566;
+  --gold: #ffe566;
+  --teal: #7ffff0;
+  --cream: #080808;
+  --paper: #000000;
+  --sage: #111111;
+  --muted: #f0f0f0;
+  --line: #ffffff;
+  --shadow: none;
+  color-scheme: dark;
+  color: #ffffff !important;
+  background: #000000 !important;
+}
+
+/* Give major content surfaces a true dark background and a clear boundary. */
+html.night-mode body.high-contrast .site-header,
+html.night-mode body.high-contrast .site-footer,
+html.night-mode body.high-contrast .page-hero,
+html.night-mode body.high-contrast .landing-hero,
+html.night-mode body.high-contrast .discover-band,
+html.night-mode body.high-contrast .quick-actions,
+html.night-mode body.high-contrast .page-content,
+html.night-mode body.high-contrast .portal-panel,
+html.night-mode body.high-contrast .portal-shortcuts > a,
+html.night-mode body.high-contrast .catalog-card,
+html.night-mode body.high-contrast .place-card,
+html.night-mode body.high-contrast .service-card,
+html.night-mode body.high-contrast .board-panel,
+html.night-mode body.high-contrast .update-card,
+html.night-mode body.high-contrast .feedback-form-card,
+html.night-mode body.high-contrast .feedback-aside,
+html.night-mode body.high-contrast .guide-nav,
+html.night-mode body.high-contrast .nearby-grid a,
+html.night-mode body.high-contrast .copy-number,
+html.night-mode body.high-contrast .filter-bar,
+html.night-mode body.high-contrast .board-empty,
+html.night-mode body.high-contrast .map-fallback,
+html.night-mode body.high-contrast .empty-state,
+html.night-mode body.high-contrast .home-notice-item,
+html.night-mode body.high-contrast .settings-control {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+/* Override light-mode high-contrast hero surfaces. */
+html.night-mode body.high-contrast .landing-hero,
+html.night-mode body.high-contrast .discover-band {
+  background: #000000 !important;
+}
+
+/* Make all text readable even where older rules specify muted colours. */
+html.night-mode body.high-contrast,
+html.night-mode body.high-contrast h1,
+html.night-mode body.high-contrast h2,
+html.night-mode body.high-contrast h3,
+html.night-mode body.high-contrast h4,
+html.night-mode body.high-contrast p,
+html.night-mode body.high-contrast li,
+html.night-mode body.high-contrast label,
+html.night-mode body.high-contrast small,
+html.night-mode body.high-contrast b,
+html.night-mode body.high-contrast strong,
+html.night-mode body.high-contrast .muted-copy,
+html.night-mode body.high-contrast .landing-lead,
+html.night-mode body.high-contrast .eyebrow,
+html.night-mode body.high-contrast .breadcrumbs,
+html.night-mode body.high-contrast .update-meta,
+html.night-mode body.high-contrast .result-count,
+html.night-mode body.high-contrast .map-note,
+html.night-mode body.high-contrast .portal-footnote,
+html.night-mode body.high-contrast .font-size-indicator {
+  color: #ffffff !important;
+}
+
+/* Links use bright yellow, visually distinct from ordinary text. */
+html.night-mode body.high-contrast a:not(.button):not(.brand) {
+  color: #ffef70 !important;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+}
+
+/* Interactive controls have high-contrast borders and dark surfaces. */
+html.night-mode body.high-contrast button,
+html.night-mode body.high-contrast .button,
+html.night-mode body.high-contrast .font-control,
+html.night-mode body.high-contrast .settings-toggle,
+html.night-mode body.high-contrast .filter-chip,
+html.night-mode body.high-contrast .board-categories .map-category-button,
+html.night-mode body.high-contrast .location-button,
+html.night-mode body.high-contrast .button-outline {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  box-shadow: none !important;
+}
+
+/* Accent/submit actions use yellow with black text for strong contrast. */
+html.night-mode body.high-contrast .button-coral,
+html.night-mode body.high-contrast .notice-form-actions .button-coral,
+html.night-mode body.high-contrast button[type="submit"],
+html.night-mode body.high-contrast input[type="submit"] {
+  background: #ffd400 !important;
+  color: #000000 !important;
+  border: 2px solid #ffd400 !important;
+  font-weight: 800;
+}
+
+/* Search boxes, forms, and selects remain legible and clearly bounded. */
+html.night-mode body.high-contrast input,
+html.night-mode body.high-contrast textarea,
+html.night-mode body.high-contrast select,
+html.night-mode body.high-contrast .feedback-options label span {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  caret-color: #ffef70;
+}
+html.night-mode body.high-contrast input::placeholder,
+html.night-mode body.high-contrast textarea::placeholder {
+  color: #dddddd !important;
+  opacity: 1;
+}
+
+/* Very visible keyboard focus indicator. */
+html.night-mode body.high-contrast a:focus-visible,
+html.night-mode body.high-contrast button:focus-visible,
+html.night-mode body.high-contrast input:focus-visible,
+html.night-mode body.high-contrast textarea:focus-visible,
+html.night-mode body.high-contrast select:focus-visible,
+html.night-mode body.high-contrast [tabindex]:focus-visible {
+  outline: 3px solid #ffef70 !important;
+  outline-offset: 3px !important;
+}
+
+/* Selected filter/category controls remain obvious. */
+html.night-mode body.high-contrast .selected,
+html.night-mode body.high-contrast [aria-pressed="true"],
+html.night-mode body.high-contrast .map-category-button.is-active {
+  background: #ffef70 !important;
+  color: #000000 !important;
+  border-color: #ffef70 !important;
+}
+
+/* Keep illustration details from washing out while preserving their shapes. */
+html.night-mode body.high-contrast .landing-art,
+html.night-mode body.high-contrast .discover-art {
+  filter: contrast(1.35);
+}
+
+/* Extra surfaces and components used across the portal in combined night/high-contrast mode. */
+html.night-mode body.high-contrast .notice-card,
+html.night-mode body.high-contrast .event-row,
+html.night-mode body.high-contrast .event-date,
+html.night-mode body.high-contrast .home-contact,
+html.night-mode body.high-contrast .home-contact-card,
+html.night-mode body.high-contrast .notice-board-list,
+html.night-mode body.high-contrast .sample-notice,
+html.night-mode body.high-contrast .service-icon,
+html.night-mode body.high-contrast .catalog-icon,
+html.night-mode body.high-contrast .quick-icon,
+html.night-mode body.high-contrast .favorite-toggle,
+html.night-mode body.high-contrast .settings-art,
+html.night-mode body.high-contrast .filter-context,
+html.night-mode body.high-contrast .empty-board-message,
+html.night-mode body.high-contrast .empty-board-message .empty-state-icon {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+html.night-mode body.high-contrast .notice-card a,
+html.night-mode body.high-contrast .place-actions a,
+html.night-mode body.high-contrast .footer-links a,
+html.night-mode body.high-contrast .text-link,
+html.night-mode body.high-contrast .arrow-link,
+html.night-mode body.high-contrast .brand,
+html.night-mode body.high-contrast .brand > span,
+html.night-mode body.high-contrast .brand > span > span {
+  color: #ffef70 !important;
+}
+
+html.night-mode body.high-contrast .notice-tag,
+html.night-mode body.high-contrast .catalog-card .tag,
+html.night-mode body.high-contrast .place-type,
+html.night-mode body.high-contrast .event-date,
+html.night-mode body.high-contrast .board-categories span {
+  background: #000000 !important;
+  color: #ffef70 !important;
+  border: 1px solid #ffef70 !important;
+}
+
+html.night-mode body.high-contrast .menu-button,
+html.night-mode body.high-contrast .theme-toggle,
+html.night-mode body.high-contrast .settings-link,
+html.night-mode body.high-contrast .language-toggle,
+html.night-mode body.high-contrast .language-toggle-floating {
+  color: #ffffff !important;
+  background: #000000 !important;
+  border: 2px solid #ffffff !important;
+}
+
+html.night-mode body.high-contrast .menu-button span {
+  background: #ffffff !important;
+}
+
+html.night-mode body.high-contrast .notice-location-status,
+html.night-mode body.high-contrast .location-privacy-note,
+html.night-mode body.high-contrast .home-notices-status,
+html.night-mode body.high-contrast .footer-trust,
+html.night-mode body.high-contrast .sample-notice time,
+html.night-mode body.high-contrast .home-notice-item time {
+  color: #ffffff !important;
+}
+
+html.night-mode body.high-contrast .home-notice-item .notice-tag {
+  background: #000000 !important;
+  color: #ffef70 !important;
+  border: 1px solid #ffef70 !important;
+}
+
+html.night-mode body.high-contrast .landing-art,
+html.night-mode body.high-contrast .discover-art,
+html.night-mode body.high-contrast .place-art {
+  filter: contrast(1.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.night-mode body.high-contrast *,
+  html.night-mode body.high-contrast *::before,
+  html.night-mode body.high-contrast *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* Fix: render the crescent moon in both homepage illustrations when Night Mode
+   and High Contrast are enabled together. High-contrast mode uses pure black
+   as the shadow colour so the crescent remains visible against the night sky. */
+html.night-mode body.high-contrast .landing-art {
+  background: linear-gradient(175deg, #000000 0%, #050505 55%, #111111 100%) !important;
+}
+html.night-mode body.high-contrast .art-sun {
+  background: #fff6cc !important;
+  transform: rotate(-18deg);
+  box-shadow: 0 0 30px #fff6cc55;
+}
+html.night-mode body.high-contrast .art-sun::after {
+  background: #000000 !important;
+  opacity: 1 !important;
+  transform: translate(34%, -15%) scale(.9) !important;
+}
+html.night-mode body.high-contrast .discover-art {
+  background: #000000 !important;
+}
+html.night-mode body.high-contrast .discover-sun {
+  fill: #fff6cc !important;
+  transform: rotate(-18deg);
+  filter: drop-shadow(0 0 18px #fff6cc55);
+}
+html.night-mode body.high-contrast .discover-moon-shadow {
+  fill: #000000 !important;
+  opacity: 1 !important;
+  transform: translate(30px, -12px) scale(.9) !important;
+}
