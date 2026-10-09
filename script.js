@@ -129,7 +129,7 @@
         if (!card.hidden) visible++;
       });
       if (empty) empty.hidden = visible !== 0;
-      if (count) count.textContent = `${visible} ${visible === 1 ? 'category' : 'categories'} found`;
+      if (count) count.textContent = `${visible}${visible === 1 ? 'category' : 'categories'} found`;
     };
     document.querySelectorAll('.filter-chip[data-filter]').forEach(button => button.addEventListener('click', () => {
       category = button.dataset.filter;
@@ -206,10 +206,6 @@
     }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 });
   });
 
-  // Regional notice board for the Updates page.
-  // GitHub Pages is static, so government pages are read through a browser-friendly
-  // relay when direct CORS access is not available. The displayed notice URL remains
-  // the official government source.
   const noticeForm = document.querySelector('#notice-location-form');
   const noticeBoard = document.querySelector('#notice-board-list');
   const noticeRegion = document.querySelector('#notice-region-input');
@@ -437,29 +433,50 @@
     refreshRegionalNotices({ region: noticeRegion.value, area: noticeArea.value, pincode: noticePincode.value });
   }
 
+  // Feedback Form Handler - Opens Gmail in a new browser tab with pre-filled compose window
   const feedbackForm = document.querySelector('.feedback-form');
   const feedbackText = document.querySelector('#feedback-text');
   const characterCount = document.querySelector('.character-count');
   let preparedMessage = '';
+
   feedbackText?.addEventListener('input', () => {
     if (characterCount) characterCount.textContent = `${feedbackText.value.length} / 500 characters`;
   });
-  feedbackForm?.addEventListener('submit', event => {
+
+  feedbackForm?.addEventListener('submit', async event => {
     event.preventDefault();
+
     const data = new FormData(feedbackForm);
-    const topic = data.get('topic');
+    const topic = data.get('topic') || 'General Suggestion';
     const content = feedbackText.value.trim();
+
     preparedMessage = `VillageConnect suggestion — ${topic}\n\n${content}`;
+
+    // Destination email address where you want to receive feedback
+    const recipientEmail = 'villageconnect@gmail.com'; 
+    const subject = encodeURIComponent(`VillageConnect Suggestion — ${topic}`);
+    const body = encodeURIComponent(content);
+
+    // Direct Gmail Web Compose link opened in a new browser tab
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipientEmail)}&su=${subject}&body=${body}`;
+    window.open(gmailUrl, '_blank');
+
+    // Update UI confirmation message
     const confirmation = feedbackForm.querySelector('.feedback-confirmation');
-    confirmation.textContent = 'Your message draft is ready on this device. Copy it below to share with your local portal administrator; nothing has been sent.';
+    if (confirmation) {
+      confirmation.textContent = 'Gmail draft opened in a new tab! If it did not open automatically, you can copy your message below.';
+    }
+
+    // Display copy button as backup
     const copyButton = feedbackForm.querySelector('.copy-feedback');
     if (copyButton) copyButton.hidden = false;
   });
+
   document.querySelector('.copy-feedback')?.addEventListener('click', async () => {
     const confirmation = feedbackForm?.querySelector('.feedback-confirmation');
     try {
       await navigator.clipboard.writeText(preparedMessage);
-      if (confirmation) confirmation.textContent = 'Message copied. You can paste it into your local contact channel.';
+      if (confirmation) confirmation.textContent = 'Message copied. You can paste it into your email app or contact channel.';
     } catch {
       if (confirmation) confirmation.textContent = 'Clipboard access is unavailable. You can select and copy your message manually.';
     }
