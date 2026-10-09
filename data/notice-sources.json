@@ -1,1 +1,29 @@
-[]
+{
+  "country": "India",
+  "sourceDirectory": "https://igod.gov.in/districts",
+  "discoveryUpdatedAt": "2026-10-09T11:52:58+05:30",
+  "discoveryStatus": "cached-registry",
+  "directoryPagesVisited": 2,
+  "sourcePaths": [
+    "/en/notice_category/public-notice/",
+    "/notice_category/public-notice/",
+    "/en/notice_category/announcements/",
+    "/notice_category/announcements/",
+    "/announcements-and-press-notes/",
+    "/whats-new/whats-new/",
+    "/en/whats-new/whats-new/",
+    "/notices/",
+    "/en/notices/",
+    "/notifications/",
+    "/en/notifications/",
+    "/news/",
+    "/en/news/",
+    "/recruitment/",
+    "/en/recruitment/",
+    "/tenders/",
+    "/en/tenders/",
+    "/circulars/",
+    "/orders/"
+  ],
+  "districts": []
+}
