@@ -567,3 +567,28 @@ html.night-mode .notice-parser-warning { background: #383327; color: #f0dfba; bo
 html.night-mode body:not(.high-contrast) .home-notice-item { background: rgba(27, 33, 31, .6); border-color: rgba(255,255,255,.08); }
 
 html.night-mode body:not(.high-contrast) .board-categories .map-category-button.is-active, html.night-mode body:not(.high-contrast) .board-categories .map-category-button[aria-pressed="true"] { background: var(--forest-light); color: #fff; }
+
+/* Updates page: strong contrast for the current-location button in dark mode. */
+html.night-mode body:not(.high-contrast) #notice-current-location {
+  background: #111d32;
+  color: #fff;
+  border-color: #111d32;
+}
+html.night-mode body:not(.high-contrast) #notice-current-location:hover,
+html.night-mode body:not(.high-contrast) #notice-current-location:focus-visible {
+  background: #fff;
+  color: #111d32;
+  border-color: #fff;
+}
+
+/* Keep the orange Find notices button readable; darken rather than lighten on hover. */
+.notice-form-actions .button-coral,
+.notice-form-actions .button-coral:hover,
+.notice-form-actions .button-coral:focus-visible {
+  color: #fff;
+}
+.notice-form-actions .button-coral:hover,
+.notice-form-actions .button-coral:focus-visible {
+  background: #cf5940;
+  border-color: #cf5940;
+}
