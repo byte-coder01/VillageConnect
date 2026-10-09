@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="VillageConnect">
+  <rect width="64" height="64" rx="14" fill="#173d37"/>
+  <path d="M10 30 32 12l22 18v20a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4Z" fill="#f5f1e8"/>
+  <path d="M25 54V38h14v16" fill="#eb6d52"/>
+  <path d="M18 31h28" stroke="#ddb24d" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="32" cy="26" r="3" fill="#4b9487"/>
+</svg>
