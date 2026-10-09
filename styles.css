@@ -869,3 +869,69 @@ html.night-mode body.high-contrast .discover-moon-shadow {
   opacity: 1 !important;
   transform: translate(30px, -12px) scale(.9) !important;
 }
+
+
+/* Privacy-first embedded maps: maps load only after an explicit user action. */
+.map-iframe-gated { display: none !important; }
+.map-privacy-gate {
+  box-sizing: border-box;
+  min-height: 225px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: .65rem;
+  padding: 1.25rem;
+  background: #edf2eb;
+  color: var(--ink, #14251f);
+  border: 1px solid var(--line, #d4ddd5);
+}
+.map-privacy-gate-large { min-height: min(62vw, 570px); }
+.map-privacy-gate p { margin: 0; max-width: 62ch; line-height: 1.6; }
+.map-privacy-message { font-weight: 700; }
+.map-privacy-note { font-size: .76rem; color: #46544d; }
+.map-privacy-load { margin-top: .15rem; }
+.map-privacy-load:focus-visible { outline: 3px solid #ffbd36; outline-offset: 3px; }
+html.night-mode body:not(.high-contrast) .map-privacy-gate {
+  background: #111d32;
+  color: #ffffff;
+  border-color: #8ca3c2;
+}
+html.night-mode body:not(.high-contrast) .map-privacy-note { color: #d4deed; }
+body.high-contrast .map-privacy-gate {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+body.high-contrast .map-privacy-note { color: #000000 !important; }
+html.night-mode body.high-contrast .map-privacy-gate {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+}
+html.night-mode body.high-contrast .map-privacy-note { color: #ffffff !important; }
+@media (max-width: 760px) {
+  .map-privacy-gate-large { min-height: 350px; }
+}
+
+/* Updates page: black text on the light location form in combined Night Mode + High Contrast.
+   Inputs remain black with white text; only the form's explanatory copy and labels are dark. */
+html.night-mode body.high-contrast .notice-location-form {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+html.night-mode body.high-contrast .notice-location-form p,
+html.night-mode body.high-contrast .notice-location-form label,
+html.night-mode body.high-contrast .notice-location-form label > span,
+html.night-mode body.high-contrast .notice-location-form .location-privacy-note,
+html.night-mode body.high-contrast .notice-location-form .location-privacy-note a,
+html.night-mode body.high-contrast .notice-location-form .notice-location-status {
+  color: #000000 !important;
+}
+html.night-mode body.high-contrast .notice-location-form .location-privacy-note a {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 0.18em !important;
+}
