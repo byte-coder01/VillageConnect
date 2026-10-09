@@ -228,16 +228,62 @@
   const mapAreaFromUrl = pageQuery.get('area') || '';
   const makeMapsUrl = query => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
   const makeEmbedUrl = query => `https://maps.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
+
+  // Embedded Google Maps may set third-party cookies. Do not contact Google until
+  // the visitor explicitly chooses to load an interactive map preview.
+  const prepareMapPrivacyGate = frame => {
+    frame.removeAttribute('src');
+    frame.classList.add('map-iframe-gated');
+    frame.dataset.mapLoaded = 'false';
+    const gate = document.createElement('div');
+    gate.className = `map-privacy-gate${frame.id === 'google-map' ? ' map-privacy-gate-large' : ''}`;
+    gate.setAttribute('role', 'group');
+    gate.setAttribute('aria-label', 'Interactive map privacy controls');
+
+    const message = document.createElement('p');
+    message.className = 'map-privacy-message';
+    message.textContent = 'The interactive map is not loaded yet. Load it only when you need the embedded preview.';
+    const note = document.createElement('p');
+    note.className = 'map-privacy-note';
+    note.textContent = 'Google Maps may set third-party cookies when loaded. You can also open Google Maps in a new tab.';
+    const loadButton = document.createElement('button');
+    loadButton.type = 'button';
+    loadButton.className = 'button button-small button-coral map-privacy-load';
+    loadButton.textContent = 'Load interactive map';
+    if (frame.id) loadButton.setAttribute('aria-controls', frame.id);
+    loadButton.addEventListener('click', () => {
+      const query = frame.dataset.mapQuery || defaultLocation || 'India';
+      frame.dataset.mapLoaded = 'true';
+      frame.classList.remove('map-iframe-gated');
+      frame.src = makeEmbedUrl(query);
+      gate.hidden = true;
+      const caption = frame.nextElementSibling;
+      if (caption?.classList.contains('map-fallback')) {
+        caption.textContent = `Showing Google Maps results for ${query}.`;
+      }
+    });
+    gate.append(message, note, loadButton);
+    frame.parentNode?.insertBefore(gate, frame);
+  };
+  mapFrames.forEach(prepareMapPrivacyGate);
+
   const updateMaps = (area, category = '') => {
     const target = [category, area].filter(Boolean).join(' near ') || area || defaultLocation || 'India';
-    mapFrames.forEach(frame => { frame.src = makeEmbedUrl(target); frame.title = `Google Maps results for ${target}`; });
+    mapFrames.forEach(frame => {
+      frame.dataset.mapQuery = target;
+      frame.title = `Google Maps results for ${target}`;
+      if (frame.dataset.mapLoaded === 'true') frame.src = makeEmbedUrl(target);
+    });
     if (googleLink) googleLink.href = makeMapsUrl(target);
     if (miniMapCaption && area) {
       const saved = readSharedLocation();
       const captionArea = sharedLocationQuery(saved, '') === area ? (sharedLocationLabel(saved) || area) : area;
-      miniMapCaption.replaceChildren(`Showing ${category ? `${category} near ` : ''}${captionArea} on Google Maps.`);
+      const loaded = mapFrames.some(frame => frame.dataset.mapLoaded === 'true');
+      miniMapCaption.textContent = loaded
+        ? `Showing ${category ? `${category} near ` : ''}${captionArea} on Google Maps.`
+        : `Map preview for ${category ? `${category} near ` : ''}${captionArea} is paused. Choose “Load interactive map” to display it.`;
     }
-    if (mapStatus) mapStatus.textContent = `Showing Google Maps results for ${target}. Select “Open Google Maps” to see place details and directions.`;
+    if (mapStatus) mapStatus.textContent = `Google Maps results for ${target} are ready. Load the interactive map to preview them here, or open Google Maps in a new tab.`;
   };
   const savedQuery = sharedLocationQuery(savedLocation, '');
   const savedLabel = sharedLocationLabel(savedLocation);
@@ -431,13 +477,19 @@
     const locationText = mapLocation || getEventsBaseLocation() || 'India';
     const category = eventsMapCategories[selectedEventsMapCategory];
     const query = category ? `${category.query} near ${locationText}` : `public events and services near ${locationText}`;
-    if (eventsMiniMap) { eventsMiniMap.src = makeEmbedUrl(query); eventsMiniMap.title = `Google Maps showing ${category ? category.label.toLowerCase() : 'public events and services'} near ${locationText}`; }
+    if (eventsMiniMap) {
+      eventsMiniMap.dataset.mapQuery = query;
+      eventsMiniMap.title = `Google Maps showing ${category ? category.label.toLowerCase() : 'public events and services'} near ${locationText}`;
+      if (eventsMiniMap.dataset.mapLoaded === 'true') eventsMiniMap.src = makeEmbedUrl(query);
+    }
     if (eventsGoogleLink) eventsGoogleLink.href = makeMapsUrl(query);
     const label = category ? category.label : 'public events and services';
     const saved = readSharedLocation();
     const displayLocation = sharedLocationQuery(saved, '') === locationText ? (sharedLocationLabel(saved) || locationText) : locationText;
     if (eventsMapIntro) eventsMapIntro.textContent = `Showing ${label.toLowerCase()} around ${displayLocation}.`;
-    if (miniMapCaption) miniMapCaption.textContent = `Showing ${label.toLowerCase()} around ${displayLocation} on Google Maps.`;
+    if (miniMapCaption) miniMapCaption.textContent = eventsMiniMap?.dataset.mapLoaded === 'true'
+      ? `Showing ${label.toLowerCase()} around ${displayLocation} on Google Maps.`
+      : `Map preview for ${label.toLowerCase()} around ${displayLocation} is paused. Choose “Load interactive map” to display it.`;
     document.querySelectorAll('[data-map-category]').forEach(button => {
       const active = button.dataset.mapCategory === selectedEventsMapCategory;
       button.setAttribute('aria-pressed', String(active));
