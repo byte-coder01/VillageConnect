@@ -1,7 +1,7 @@
 {
   "country": "India",
   "sourceDirectory": "https://igod.gov.in/districts",
-  "discoveryUpdatedAt": "2026-10-10T13:10:32+05:30",
+  "discoveryUpdatedAt": "2026-10-10T11:59:37+05:30",
   "discoveryStatus": "cached-registry",
   "directoryPagesVisited": 2,
   "sourcePaths": [
@@ -25,5 +25,265 @@
     "/circulars/",
     "/orders/"
   ],
-  "districts": []
+  "districts": [
+    {
+      "name": "Almora",
+      "aliases": [
+        "almora"
+      ],
+      "domain": "almora.nic.in",
+      "domains": [
+        "almora.nic.in"
+      ],
+      "pincodes": [],
+      "region": "Uttarakhand",
+      "sourcePaths": [
+        "/announcements-and-press-notes/",
+        "/notice_category/public-notice/",
+        "/recruitment/",
+        "/tenders/"
+      ]
+    },
+    {
+      "name": "Bageshwar",
+      "aliases": [
+        "bageshwar"
+      ],
+      "domain": "bageshwar.nic.in",
+      "domains": [
+        "bageshwar.nic.in"
+      ],
+      "pincodes": [
+        "263642"
+      ],
+      "region": "Uttarakhand",
+      "sourcePaths": [
+        "/announcements-and-press-notes/",
+        "/notice_category/public-notice/",
+        "/recruitment/",
+        "/tenders/"
+      ]
+    },
+    {
+      "name": "Chamoli",
+      "aliases": [
+        "chamoli",
+        "chamoli garhwal"
+      ],
+      "domain": "chamoli.nic.in",
+      "domains": [
+        "chamoli.nic.in"
+      ],
+      "pincodes": [],
+      "region": "Uttarakhand",
+      "sourcePaths": [
+        "/announcements-and-press-notes/",
+        "/notice_category/public-notice/",
+        "/recruitment/",
+        "/tenders/"
+      ]
+    },
+    {
+      "name": "Champawat",
+      "aliases": [
+        "champawat"
+      ],
+      "domain": "champawat.nic.in",
+      "domains": [
+        "champawat.nic.in"
+      ],
+      "pincodes": [
+        "262523"
+      ],
+      "region": "Uttarakhand",
+      "sourcePaths": [
+        "/announcements-and-press-notes/",
+        "/notice_category/public-notice/",
+        "/recruitment/",
+        "/tenders/"
+      ]
+    },
+    {
+      "name": "Dehradun",
+      "aliases": [
+        "dehradun"
+      ],
+      "domain": "dehradun.nic.in",
+      "domains": [
+        "dehradun.nic.in"
+      ],
+      "pincodes": [],
+      "region": "Uttarakhand",
+      "sourcePaths": [
+        "/announcements-and-press-notes/",
+        "/notice_category/public-notice/",
+        "/recruitment/",
+        "/tenders/"
+      ]
+    },
+    {
+      "name": "Haridwar",
+      "aliases": [
+        "haridwar"
+      ],
+      "domain": "haridwar.nic.in",
+      "domains": [
+        "haridwar.nic.in"
+      ],
+      "pincodes": [],
+      "region": "Uttarakhand",
+      "sourcePaths": [
+        "/announcements-and-press-notes/",
+        "/notice_category/public-notice/",
+        "/recruitment/",
+        "/tenders/"
+      ]
+    },
+    {
+      "name": "Nainital",
+      "aliases": [
+        "nainital",
+        "haldwani"
+      ],
+      "domain": "nainital.nic.in",
+      "domains": [
+        "nainital.nic.in"
+      ],
+      "pincodes": [],
+      "region": "Uttarakhand",
+      "sourcePaths": [
+        "/announcements-and-press-notes/",
+        "/notice_category/public-notice/",
+        "/recruitment/",
+        "/tenders/"
+      ]
+    },
+    {
+      "name": "Pauri Garhwal",
+      "aliases": [
+        "pauri garhwal",
+        "pauri",
+        "kotdwar",
+        "srinagar garhwal",
+        "lansdowne",
+        "yamkeshwar",
+        "chaubattakhal"
+      ],
+      "domain": "pauri.nic.in",
+      "domains": [
+        "pauri.nic.in"
+      ],
+      "pincodes": [
+        "246001"
+      ],
+      "region": "Uttarakhand",
+      "sourcePaths": [
+        "/announcements-and-press-notes/",
+        "/whats-new/whats-new/",
+        "/notice_category/public-notice/",
+        "/past-notices/announcements/",
+        "/recruitment/",
+        "/tenders/"
+      ]
+    },
+    {
+      "name": "Pithoragarh",
+      "aliases": [
+        "pithoragarh",
+        "pithoragarh district"
+      ],
+      "domain": "pithoragarh.nic.in",
+      "domains": [
+        "pithoragarh.nic.in"
+      ],
+      "pincodes": [],
+      "region": "Uttarakhand",
+      "sourcePaths": [
+        "/announcements-and-press-notes/",
+        "/notice_category/public-notice/",
+        "/recruitment/",
+        "/tenders/"
+      ]
+    },
+    {
+      "name": "Rudraprayag",
+      "aliases": [
+        "rudraprayag"
+      ],
+      "domain": "rudraprayag.nic.in",
+      "domains": [
+        "rudraprayag.nic.in"
+      ],
+      "pincodes": [],
+      "region": "Uttarakhand",
+      "sourcePaths": [
+        "/announcements-and-press-notes/",
+        "/notice_category/public-notice/",
+        "/recruitment/",
+        "/tenders/"
+      ]
+    },
+    {
+      "name": "Tehri Garhwal",
+      "aliases": [
+        "tehri garhwal",
+        "tehri",
+        "new tehri"
+      ],
+      "domain": "tehri.nic.in",
+      "domains": [
+        "tehri.nic.in"
+      ],
+      "pincodes": [
+        "249001"
+      ],
+      "region": "Uttarakhand",
+      "sourcePaths": [
+        "/announcements-and-press-notes/",
+        "/notice_category/public-notice/",
+        "/recruitment/",
+        "/tenders/"
+      ]
+    },
+    {
+      "name": "Udham Singh Nagar",
+      "aliases": [
+        "udham singh nagar",
+        "udham singh nagar district",
+        "rudrapur"
+      ],
+      "domain": "usnagar.nic.in",
+      "domains": [
+        "usnagar.nic.in"
+      ],
+      "pincodes": [
+        "263153"
+      ],
+      "region": "Uttarakhand",
+      "sourcePaths": [
+        "/announcements-and-press-notes/",
+        "/notice_category/public-notice/",
+        "/recruitment/",
+        "/tenders/"
+      ]
+    },
+    {
+      "name": "Uttarkashi",
+      "aliases": [
+        "uttarkashi"
+      ],
+      "domain": "uttarkashi.nic.in",
+      "domains": [
+        "uttarkashi.nic.in"
+      ],
+      "pincodes": [],
+      "region": "Uttarakhand",
+      "sourcePaths": [
+        "/announcements-and-press-notes/",
+        "/notice_category/public-notice/",
+        "/recruitment/",
+        "/tenders/"
+      ]
+    }
+  ]
 }
