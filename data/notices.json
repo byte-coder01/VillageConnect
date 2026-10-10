@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T13:28:32+05:30",
+  "generatedAt": "2026-10-10T13:48:19+05:30",
   "status": "live",
   "noticeCount": 34,
   "districtsDiscovered": 13,
@@ -50,17 +50,6 @@
     },
     {
       "scope": "district",
-      "district": "Haridwar",
-      "region": "Uttarakhand",
-      "category": "Tender",
-      "date": "2026-09-28",
-      "time": "",
-      "title": "Tender notice / Nagar Palika Parishad Manglore (No. 1431 Dated: 28.09.2026)",
-      "description": "Open the official notice for the full details.",
-      "source": "https://haridwar.nic.in/notice/tender-notice-nagar-palika-parishad-manglore-no-1431-dated-28-09-2026/"
-    },
-    {
-      "scope": "district",
       "district": "Uttarkashi",
       "region": "Uttarakhand",
       "category": "Government",
@@ -80,6 +69,17 @@
       "title": "Tender PWD Short-term Tender Notice(28-09-2026) New",
       "description": "Open the official notice for the full details.",
       "source": "https://uttarkashi.nic.in/notice/pwd-short-term-tender-notice28-09-2026/"
+    },
+    {
+      "scope": "district",
+      "district": "Haridwar",
+      "region": "Uttarakhand",
+      "category": "Tender",
+      "date": "2026-09-28",
+      "time": "",
+      "title": "Tender notice / Nagar Palika Parishad Manglore (No. 1431 Dated: 28.09.2026)",
+      "description": "Open the official notice for the full details.",
+      "source": "https://haridwar.nic.in/notice/tender-notice-nagar-palika-parishad-manglore-no-1431-dated-28-09-2026/"
     },
     {
       "scope": "district",
