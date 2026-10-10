@@ -1,6 +1,6 @@
 # VillageConnect — Digital Village Portal
 
-VillageConnect is a responsive digital village portal concept that brings essential services, nearby places, community updates, and local discovery together in one simple website. The map defaults to India on the Updates page until a visitor enters an area or shares their location; the map page retains its original Pauri Garhwal starting point.
+VillageConnect is a responsive digital village portal concept that brings essential services, nearby places, community updates, and local discovery together in one simple website. The default area is Pauri Garhwal, Uttarakhand, PIN 246001. A visitor’s saved location takes priority over this fallback; the Updates form uses the default only when no location has been saved.
 
 ## Features
 
@@ -10,7 +10,7 @@ VillageConnect is a responsive digital village portal concept that brings essent
 - Embedded Google Maps with place search, links to Google Maps results, and optional browser geolocation.
 - Community updates page that pulls current district-government notices discovered by the scheduled indexer and falls back to available official PIB releases when local sources are unavailable.
 - Day/night theme switch. Day mode is the default; night mode uses a deep blue palette, a crescent moon, and stars.
-- Accessibility settings for text size, high contrast, and reduced motion.
+- Accessibility settings for text size, high contrast, and reduced motion. High contrast works with both day and night themes; in night mode it uses black surfaces, bright text, yellow links/actions, outlined controls, and a visible keyboard-focus indicator.
 
 ## Built with
 
@@ -56,7 +56,7 @@ The site is hosted on GitHub Pages and uses a GitHub Actions workflow to refresh
 
 ## Regional notice board
 
-The Updates page accepts a region/state, area/district, and 6-digit PIN code. Submitting the form updates the existing Google Maps panel and filters the latest generated notice dataset for the selected district. Government pages are fetched by GitHub Actions, not scraped directly in a visitor’s browser. The updater discovers district portals from IGOD rather than relying on a fixed district allowlist. Every displayed notice must pass format, date, and official-source checks and links back to its source. Malformed source output is excluded and can trigger an explanatory warning in the selected district’s notice board.
+The Updates page defaults to Uttarakhand, Pauri Garhwal, PIN 246001, and accepts a region/state, area/district, and 6-digit PIN code. Submitting the form updates the existing Google Maps panel and filters the latest generated notice dataset for the selected district. Government pages are fetched by GitHub Actions, not scraped directly in a visitor’s browser. The updater discovers district portals from IGOD rather than relying on a fixed district allowlist. Every displayed notice must pass format, date, and official-source checks and links back to its source. Malformed source output is excluded and can trigger an explanatory warning in the selected district’s notice board.
 
 ## Regional notices on GitHub Pages
 
@@ -89,3 +89,8 @@ Because district portals use different site software and formats, this is broad 
 ## Shared location, map categories, and homepage notices
 
 All pages read one `villageconnect-shared-location` browser preference. Earlier `villageconnect-map-location` and `villageconnect-notice-location` values are migrated when possible. The Updates page map-category pills are buttons that change the embedded Google Maps search and the associated external Maps link in place. The homepage community board loads up to three recent validated records from `data/notices.json`, matching the saved district first, then state notices, and clearly labelled national PIB fallback notices.
+
+
+### Privacy and Lighthouse note
+
+Google Maps embeds are now click-to-load. The site shows a local placeholder first and loads an embedded map only after the visitor selects **Load interactive map**. This avoids contacting Google Maps and loading its third-party cookies during the initial page load. The external **Open Google Maps** links remain available. Loading an embedded map may still cause Google to set cookies after the visitor opts in.
