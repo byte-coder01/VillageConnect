@@ -228,13 +228,17 @@
   const mapAreaFromUrl = pageQuery.get('area') || '';
   const makeMapsUrl = query => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
   const makeEmbedUrl = query => `https://maps.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
+  // Remember explicit consent for embedded maps across reloads and VillageConnect pages.
+  const MAP_EMBED_CONSENT_KEY = 'villageconnect-map-embed-consent';
+  const hasMapEmbedConsent = () => getSetting(MAP_EMBED_CONSENT_KEY, 'false') === 'true';
 
   // Embedded Google Maps may set third-party cookies. Do not contact Google until
   // the visitor explicitly chooses to load an interactive map preview.
   const prepareMapPrivacyGate = frame => {
     frame.removeAttribute('src');
     frame.classList.add('map-iframe-gated');
-    frame.dataset.mapLoaded = 'false';
+    const consentAlreadyGiven = hasMapEmbedConsent();
+    frame.dataset.mapLoaded = consentAlreadyGiven ? 'true' : 'false';
     const gate = document.createElement('div');
     gate.className = `map-privacy-gate${frame.id === 'google-map' ? ' map-privacy-gate-large' : ''}`;
     gate.setAttribute('role', 'group');
@@ -251,8 +255,15 @@
     loadButton.className = 'button button-small button-coral map-privacy-load';
     loadButton.textContent = 'Load interactive map';
     if (frame.id) loadButton.setAttribute('aria-controls', frame.id);
+    // A remembered opt-in hides the prompt; the page-specific map updater sets src
+    // once the correct location/category query has been prepared.
+    if (consentAlreadyGiven) {
+      gate.hidden = true;
+      frame.classList.remove('map-iframe-gated');
+    }
     loadButton.addEventListener('click', () => {
       const query = frame.dataset.mapQuery || defaultLocation || 'India';
+      setSetting(MAP_EMBED_CONSENT_KEY, 'true');
       frame.dataset.mapLoaded = 'true';
       frame.classList.remove('map-iframe-gated');
       frame.src = makeEmbedUrl(query);
@@ -272,7 +283,13 @@
     mapFrames.forEach(frame => {
       frame.dataset.mapQuery = target;
       frame.title = `Google Maps results for ${target}`;
-      if (frame.dataset.mapLoaded === 'true') frame.src = makeEmbedUrl(target);
+      // The Updates page manages its own category-specific map query below.
+      if (frame.id !== 'events-mini-map' && (frame.dataset.mapLoaded === 'true' || hasMapEmbedConsent())) {
+        frame.dataset.mapLoaded = 'true';
+        frame.classList.remove('map-iframe-gated');
+        if (frame.previousElementSibling?.classList.contains('map-privacy-gate')) frame.previousElementSibling.hidden = true;
+        frame.src = makeEmbedUrl(target);
+      }
     });
     if (googleLink) googleLink.href = makeMapsUrl(target);
     if (miniMapCaption && area) {
@@ -480,7 +497,12 @@
     if (eventsMiniMap) {
       eventsMiniMap.dataset.mapQuery = query;
       eventsMiniMap.title = `Google Maps showing ${category ? category.label.toLowerCase() : 'public events and services'} near ${locationText}`;
-      if (eventsMiniMap.dataset.mapLoaded === 'true') eventsMiniMap.src = makeEmbedUrl(query);
+      if (eventsMiniMap.dataset.mapLoaded === 'true' || hasMapEmbedConsent()) {
+        eventsMiniMap.dataset.mapLoaded = 'true';
+        eventsMiniMap.classList.remove('map-iframe-gated');
+        if (eventsMiniMap.previousElementSibling?.classList.contains('map-privacy-gate')) eventsMiniMap.previousElementSibling.hidden = true;
+        eventsMiniMap.src = makeEmbedUrl(query);
+      }
     }
     if (eventsGoogleLink) eventsGoogleLink.href = makeMapsUrl(query);
     const label = category ? category.label : 'public events and services';
