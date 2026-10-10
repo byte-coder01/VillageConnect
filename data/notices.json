@@ -1,11 +1,25 @@
 {
-  "generatedAt": "2026-10-10T13:10:39+05:30",
-  "status": "empty",
-  "noticeCount": 0,
-  "districtsDiscovered": 0,
+  "generatedAt": "2026-10-10T11:30:00+05:30",
+  "status": "stale",
+  "noticeCount": 1,
+  "districtsDiscovered": 13,
   "districtSourcesResponded": 0,
   "directoryStatus": "cached-registry",
   "parserWarnings": [],
-  "failedDistrictSources": 0,
-  "notices": []
+  "failedDistrictSources": 13,
+  "notices": [
+    {
+      "scope": "district",
+      "district": "Pauri Garhwal",
+      "region": "Uttarakhand",
+      "category": "Election",
+      "date": "2026-10-08",
+      "time": "",
+      "title": "Press Note on special voter enrolment drive for left-out and first-time/young voters, following Election Commission of India instructions dated 1 October 2026.",
+      "description": "Official announcement dated 8 October 2026 regarding a special voter-enrolment drive, following Election Commission of India instructions dated 1 October 2026.",
+      "source": "https://pauri.nic.in/announcements-and-press-notes/",
+      "sourceName": "District Administration, Pauri Garhwal",
+      "stale": true
+    }
+  ]
 }
