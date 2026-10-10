@@ -160,7 +160,7 @@
       query: String(item.query || item.mapQuery || '').trim(),
       latitude,
       longitude,
-      source: String(item.source || 'manual'),
+      source: String(item.source || ''),
       updatedAt: String(item.updatedAt || '')
     };
     if (!record.query && latitude !== null && longitude !== null) record.query = `${latitude}, ${longitude}`;
@@ -171,7 +171,15 @@
     const raw = getSetting(SHARED_LOCATION_KEY, '');
     if (raw) {
       const parsed = parseJson(raw, null);
-      if (parsed && typeof parsed === 'object') return normalizeLocationRecord(parsed);
+      if (parsed && typeof parsed === 'object') {
+        const record = normalizeLocationRecord(parsed);
+        // Earlier builds could label legacy coordinate locations as manual.
+        // If the record has no timestamp, treat that coordinate as migrated
+        // rather than allowing it to replace the documented default forever.
+        if (isCoordinateQuery(record.query) && !record.updatedAt && record.source === 'manual') record.source = 'migrated';
+        if (!record.source) record.source = isCoordinateQuery(record.query) ? 'migrated' : 'manual';
+        return record;
+      }
     }
     // Migrate location choices made by earlier VillageConnect versions.
     const legacyNotice = parseJson(getSetting('villageconnect-notice-location', '{}'), {});
@@ -186,7 +194,8 @@
       migrated.query = legacyMap;
     }
     if (migrated.area || migrated.region || migrated.pincode || migrated.query) {
-      migrated.source ||= 'migrated';
+      // Legacy saved values were not always marked as explicit user choices.
+      migrated.source = isCoordinateQuery(migrated.query) ? 'migrated' : (migrated.source || 'migrated');
       setSetting(SHARED_LOCATION_KEY, JSON.stringify(migrated));
       return migrated;
     }
@@ -228,9 +237,17 @@
   const mapAreaFromUrl = pageQuery.get('area') || '';
   const makeMapsUrl = query => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
   const makeEmbedUrl = query => `https://maps.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
-  // Remember explicit consent for embedded maps across reloads and VillageConnect pages.
-  const MAP_EMBED_CONSENT_KEY = 'villageconnect-map-embed-consent';
-  const hasMapEmbedConsent = () => getSetting(MAP_EMBED_CONSENT_KEY, 'false') === 'true';
+  // Remember explicit consent only for this browser tab session, shared across
+  // VillageConnect pages. A new visit/session asks again, but navigation/reloads do not.
+  const MAP_EMBED_CONSENT_KEY = 'villageconnect-map-embed-consent-session-v1';
+  const hasMapEmbedConsent = () => {
+    try { return sessionStorage.getItem(MAP_EMBED_CONSENT_KEY) === 'true'; }
+    catch { return false; }
+  };
+  const rememberMapEmbedConsentForSession = () => {
+    try { sessionStorage.setItem(MAP_EMBED_CONSENT_KEY, 'true'); }
+    catch { /* The current page can still load the map if session storage is blocked. */ }
+  };
 
   // Embedded Google Maps may set third-party cookies. Do not contact Google until
   // the visitor explicitly chooses to load an interactive map preview.
@@ -262,16 +279,23 @@
       frame.classList.remove('map-iframe-gated');
     }
     loadButton.addEventListener('click', () => {
-      const query = frame.dataset.mapQuery || defaultLocation || 'India';
-      setSetting(MAP_EMBED_CONSENT_KEY, 'true');
-      frame.dataset.mapLoaded = 'true';
-      frame.classList.remove('map-iframe-gated');
-      frame.src = makeEmbedUrl(query);
-      gate.hidden = true;
-      const caption = frame.nextElementSibling;
-      if (caption?.classList.contains('map-fallback')) {
-        caption.textContent = `Showing Google Maps results for ${query}.`;
-      }
+      // One consent enables all maps on this page and on subsequently opened
+      // VillageConnect pages for this session, not just the clicked iframe.
+      rememberMapEmbedConsentForSession();
+      mapFrames.forEach(map => {
+        const query = map.dataset.mapQuery || defaultLocation || 'India';
+        map.dataset.mapLoaded = 'true';
+        map.classList.remove('map-iframe-gated');
+        const mapGate = map.previousElementSibling;
+        if (mapGate?.classList.contains('map-privacy-gate')) mapGate.hidden = true;
+        map.src = makeEmbedUrl(query);
+        const caption = map.nextElementSibling;
+        if (caption?.classList.contains('map-fallback')) {
+          caption.textContent = `Showing Google Maps results for ${query}.`;
+        }
+      });
+      if (miniMapCaption) miniMapCaption.textContent = `Showing Google Maps results for ${frame.dataset.mapQuery || defaultLocation || 'India'}.`;
+      if (mapStatus) mapStatus.textContent = 'Interactive maps are loaded for this browsing session.';
     });
     gate.append(message, note, loadButton);
     frame.parentNode?.insertBefore(gate, frame);
@@ -309,7 +333,10 @@
     mapInput.value = initialArea;
     updateMaps(mapAreaFromUrl || savedQuery || defaultLocation, mapCategory);
   } else if (mapFrames.length) {
-    updateMaps(savedQuery || defaultLocation, mapCategory);
+    const isHomeMiniMapOnly = !mapInput && mapFrames.every(frame => frame.classList.contains('google-map-mini'));
+    const migratedLegacyLocation = savedLocation.source === 'migrated';
+    const initialMapArea = isHomeMiniMapOnly && migratedLegacyLocation && !mapAreaFromUrl ? defaultLocation : (mapAreaFromUrl || savedQuery || defaultLocation);
+    updateMaps(initialMapArea, mapCategory);
   }
   document.querySelector('#map-search-form')?.addEventListener('submit', event => {
     event.preventDefault();
@@ -426,7 +453,7 @@
   const isRenderableNotice = item => {
     if (!item || typeof item !== 'object') return false;
     const title = String(item.title || '').replace(/\s+/g, ' ').trim();
-    if (title.length < 15 || title.length > 220 || invalidNoticeText(title)) return false;
+    if (title.length < 15 || title.length > 240 || invalidNoticeText(title)) return false;
     const letters = Array.from(title).filter(char => /\p{L}/u.test(char)).length;
     if (letters < 8) return false;
     if (!/^\d{4}-\d{2}-\d{2}$/.test(String(item.date || ''))) return false;
