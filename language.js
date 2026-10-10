@@ -7,7 +7,7 @@
     // Shared navigation, controls and footer
     'Skip to content': 'मुख्य सामग्री पर जाएँ',
     'The interactive map is not loaded yet. Load it only when you need the embedded preview.': 'इंटरैक्टिव मानचित्र अभी लोड नहीं है। एम्बेडेड पूर्वावलोकन की आवश्यकता होने पर ही इसे लोड करें।',
-    'Google Maps may set third-party cookies when loaded. Your choice to allow embedded maps is remembered in this browser. You can also open Google Maps in a new tab.': 'लोड होने पर Google Maps तृतीय-पक्ष कुकीज़ सेट कर सकता है। एम्बेडेड मानचित्रों की अनुमति देने का आपका विकल्प इस ब्राउज़र में याद रखा जाएगा। आप Google Maps को नए टैब में भी खोल सकते हैं।',
+    'Google Maps may set third-party cookies when loaded. Your choice to allow embedded maps is remembered for this browsing session. You can also open Google Maps in a new tab.': 'लोड होने पर Google Maps तृतीय-पक्ष कुकीज़ सेट कर सकता है। एम्बेडेड मानचित्रों की अनुमति देने का आपका विकल्प इस ब्राउज़िंग सत्र के दौरान याद रखा जाएगा। आप Google Maps को नए टैब में भी खोल सकते हैं।',
     'Load interactive map': 'इंटरैक्टिव मानचित्र लोड करें',
     'Interactive map privacy controls': 'इंटरैक्टिव मानचित्र की गोपनीयता नियंत्रण',
     'Home': 'होम', 'Services': 'सेवाएँ', 'Discover': 'खोजें', 'Updates': 'अपडेट', 'Contact': 'संपर्क', 'Settings': 'सेटिंग्स',
