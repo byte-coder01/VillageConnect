@@ -144,7 +144,7 @@
   wireFilter('#service-search', '.catalog-card', '.empty-state', '.result-count');
   wireFilter('#directory-search', '.place-card', '.empty-state', '.result-count');
 
-  const defaultLocation = document.body.dataset.defaultLocation || 'Pauri Garhwal, Uttarakhand, India';
+  const defaultLocation = document.body.dataset.defaultLocation || 'Pauri Garhwal, Uttarakhand 246001, India';
   document.body.dataset.defaultLocation = defaultLocation;
   const SHARED_LOCATION_KEY = 'villageconnect-shared-location';
   const parseJson = (value, fallback = {}) => { try { return JSON.parse(value); } catch { return fallback; } };
@@ -586,7 +586,7 @@
     if (saved.region) noticeRegion.value = saved.region;
     if (saved.area) noticeArea.value = saved.area;
     if (saved.pincode) noticePincode.value = saved.pincode;
-    if (!hasSavedLocation) { noticeRegion.value = 'Uttarakhand'; noticeArea.value = 'Pauri Garhwal'; }
+    if (!hasSavedLocation) { noticeRegion.value = 'Uttarakhand'; noticeArea.value = 'Pauri Garhwal'; noticePincode.value = '246001'; }
     lastCoordinateQuery = Number.isFinite(saved.latitude) && Number.isFinite(saved.longitude) ? `${saved.latitude}, ${saved.longitude}` : (isCoordinateQuery(saved.query) ? saved.query : '');
     noticeForm.addEventListener('submit', event => {
       event.preventDefault();
@@ -671,7 +671,7 @@
   const effectiveHomeLocation = () => {
     const saved = readSharedLocation();
     if (saved.region || saved.area || saved.pincode || saved.query) return saved;
-    return { region: 'Uttarakhand', area: 'Pauri Garhwal', pincode: '', query: 'Pauri Garhwal, Uttarakhand, India' };
+    return { region: 'Uttarakhand', area: 'Pauri Garhwal', pincode: '246001', query: 'Pauri Garhwal, Uttarakhand 246001, India' };
   };
   const matchingNoticesFor = (region, area, pincode, sources, data) => {
     const district = pickDistrict(region, area, pincode, sources);
