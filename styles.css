@@ -935,3 +935,36 @@ html.night-mode body.high-contrast .notice-location-form .location-privacy-note 
   text-decoration-thickness: 2px !important;
   text-underline-offset: 0.18em !important;
 }
+
+
+/* Responsive settings illustration: keep it inside the content flow on phones.
+   The previous desktop offset could push the art into the footer on narrow screens. */
+@media (max-width: 760px) {
+  .settings-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+  .settings-layout > aside {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    align-self: start;
+  }
+  .settings-layout .settings-art {
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin: 0 auto 1rem;
+    box-sizing: border-box;
+    font-size: clamp(3rem, 14vw, 4.5rem);
+  }
+}
+@media (max-width: 380px) {
+  .settings-layout { gap: 1.25rem; }
+  .settings-layout .settings-art { aspect-ratio: 1 / 1; }
+}
