@@ -10,6 +10,7 @@ from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from html import unescape
 from pathlib import Path
+from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin, urlparse, urldefrag
 from urllib.request import Request, urlopen
 
@@ -39,6 +40,27 @@ STATE_NAMES = [
     "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Puducherry",
     "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand",
     "West Bengal",
+]
+
+# Last-resort official local source. Keep Pauri available even if the IGOD
+# directory is temporarily unavailable or its HTML structure changes.
+FALLBACK_DISTRICTS = [
+    {
+        "name": "Pauri Garhwal",
+        "aliases": ["pauri garhwal", "pauri", "srinagar garhwal", "kotdwar"],
+        "domain": "pauri.nic.in",
+        "domains": ["pauri.nic.in"],
+        "pincodes": ["246001"],
+        "region": "Uttarakhand",
+        "sourcePaths": [
+            "/announcements-and-press-notes/",
+            "/whats-new/whats-new/",
+            "/notice_category/public-notice/",
+            "/past-notices/announcements/",
+            "/recruitment/",
+            "/tenders/",
+        ],
+    },
 ]
 
 DEFAULT_SOURCE_PATHS = [
@@ -163,12 +185,32 @@ def category(title: str) -> str:
 
 
 def fetch(url: str, accept: str = "text/html,application/xhtml+xml,application/rss+xml,application/xml;q=0.9,*/*;q=0.2") -> tuple[str, str, str]:
-    req = Request(url, headers={"User-Agent": "VillageConnect Government Notice Indexer/2.0 (GitHub Actions; official-source discovery)", "Accept": accept})
-    with urlopen(req, timeout=10) as response:
-        ctype = response.headers.get_content_type() or ""
-        final_url = response.geturl()
-        body = response.read(2_500_000).decode("utf-8", errors="replace")
-        return body, ctype, final_url
+    """Fetch a source with one retry for transient network/server failures.
+
+    Official district sites can be slow or intermittently unavailable. A short
+    retry helps avoid treating a temporary timeout as a permanently empty feed.
+    Ordinary 404s are not retried because guessed CMS paths often do not exist.
+    """
+    last_error = None
+    for attempt in range(2):
+        req = Request(url, headers={"User-Agent": "VillageConnect Government Notice Indexer/2.1 (+GitHub Actions; official-source discovery)", "Accept": accept})
+        try:
+            with urlopen(req, timeout=15) as response:
+                ctype = response.headers.get_content_type() or ""
+                final_url = response.geturl()
+                body = response.read(2_500_000).decode("utf-8", errors="replace")
+                return body, ctype, final_url
+        except HTTPError as exc:
+            if exc.code not in {408, 425, 429} and exc.code < 500:
+                raise
+            last_error = exc
+        except (URLError, TimeoutError, OSError) as exc:
+            last_error = exc
+        if attempt == 0:
+            time.sleep(0.4)
+    if last_error is not None:
+        raise last_error
+    raise RuntimeError(f"Unable to fetch {url}")
 
 
 def gov_host(host: str) -> bool:
@@ -332,6 +374,10 @@ def discover_district_sites(existing_sources: dict) -> tuple[list[dict], str, in
                             if host not in rec["domains"]:
                                 rec["domains"].append(host)
 
+    # Record how many districts were genuinely discovered live before merging
+    # the recovery cache; cached entries must not make a failed directory look live.
+    live_discovered_count = len(discovered)
+
     # Merge the dynamic directory discoveries with the last known official domains as a recovery cache.
     # Notice content itself is never taken from this list; it is fetched live below.
     cached = existing_sources.get("districts", []) if isinstance(existing_sources, dict) else []
@@ -356,6 +402,14 @@ def discover_district_sites(existing_sources: dict) -> tuple[list[dict], str, in
             rec.setdefault("sourcePaths", [])
             discovered[key] = rec
 
+    # Preserve a known official Pauri source even if both live directory
+    # discovery and the saved registry are empty. This prevents an empty
+    # registry from silently disabling the user's default district notice board.
+    for fallback in FALLBACK_DISTRICTS:
+        key = (normalize(fallback.get("name", "")), normalize(fallback.get("region", "")))
+        if key not in discovered:
+            discovered[key] = dict(fallback)
+
     records = []
     for item in discovered.values():
         item.pop("score", None)
@@ -366,9 +420,9 @@ def discover_district_sites(existing_sources: dict) -> tuple[list[dict], str, in
             item["region"] = ""
         records.append(item)
     records.sort(key=lambda x: (normalize(x.get("region", "")), normalize(x.get("name", ""))))
-    status = "live-directory" if len(discovered) >= max(100, len(cached) * 2) else ("partial-directory" if discovered else "cached-registry")
-    if len(discovered) < 100:
-        print(f"[directory] Only {len(discovered)} districts indexed from IGOD plus cache; this run may have partial national coverage.", file=sys.stderr)
+    status = "live-directory" if live_discovered_count >= max(100, len(cached) * 2) else ("partial-directory" if live_discovered_count else "cached-registry")
+    if live_discovered_count < 100:
+        print(f"[directory] Live discovery returned {live_discovered_count} districts; {len(discovered)} total official districts remain available from live discovery plus cache.", file=sys.stderr)
     return records, status, visited_pages
 
 
@@ -417,6 +471,12 @@ def parse_page(html: str, page_url: str, district: dict, diagnostics: dict | Non
         title, description = clean(title), clean(description)
         if not date:
             return
+        # A notice row can link to a document stored on an official NIC/S3
+        # attachment host. Keep the notice verifiable through its official
+        # district listing page if the attachment URL itself is outside the
+        # allow-list; never accept content from a non-government page.
+        if not trusted_government_url(source):
+            source = page_url if trusted_government_url(page_url) else source
         if not plausible_title(raw_title) or not trusted_government_url(source):
             if diagnostics is not None and clean(raw_title):
                 diagnostics["rejectedRecords"] = diagnostics.get("rejectedRecords", 0) + 1
@@ -520,10 +580,13 @@ def scrape_district(district: dict, global_paths: list[str]) -> tuple[str, list[
             discovered_links = []
 
         explicit_paths = district.get("sourcePaths") or []
-        path_urls = [base + (path if path.startswith("/") else "/" + path) for path in explicit_paths[:4]]
+        path_urls = [base + (path if path.startswith("/") else "/" + path) for path in explicit_paths[:8]]
         guesses = [base + p for p in DEFAULT_SOURCE_PATHS]
         candidates = []
-        for url in discovered_links + path_urls + guesses:
+        # Use known-good district-specific paths first. Dynamic links on NIC
+        # homepages often include unrelated items and could crowd the actual
+        # notice page out of the previous six-URL limit.
+        for url in path_urls + discovered_links + guesses:
             if url.rstrip("/") == (base + "/").rstrip("/") or url in candidates:
                 continue
             candidates.append(url)
@@ -658,7 +721,11 @@ def main() -> int:
     existing_sources = json.loads(SOURCES_FILE.read_text(encoding="utf-8")) if SOURCES_FILE.exists() else {"districts": [], "sourcePaths": DEFAULT_SOURCE_PATHS}
     existing_data = json.loads(OUTPUT_FILE.read_text(encoding="utf-8")) if OUTPUT_FILE.exists() else {"status": "empty", "notices": []}
     previous_status = existing_data.get("status", "empty")
-    previous_notices = [n for n in existing_data.get("notices", []) if valid_notice_record(n)] if previous_status in {"live", "partial", "stale"} else []
+    cached_records = existing_data.get("notices", [])
+    # Treat saved output as a cache based on each record's own validation,
+    # rather than trusting only the top-level status label. This recovers from
+    # older runs that wrote an empty/unknown status while retaining records.
+    previous_notices = [n for n in cached_records if valid_notice_record(n)] if isinstance(cached_records, list) else []
 
     districts, discovery_status, directory_pages = discover_district_sites(existing_sources)
     sources_output = {
@@ -702,23 +769,40 @@ def main() -> int:
     except Exception as exc:
         print(f"[national] PIB RSS unavailable: {exc}", file=sys.stderr)
 
-    # Preserve only previously fetched records for districts that failed completely, and only briefly.
-    # This avoids wiping the board during an upstream outage while ensuring no hardcoded seed content is used.
+    # Preserve recent previously verified notices when a district endpoint
+    # returns HTML but its layout no longer parses, as well as during outright
+    # outages. Directory discovery is not required for this recovery: records
+    # are retained only for districts in the current (live + cached) registry.
+    all_fresh = [item for item in all_fresh if valid_notice_record(item)]
     current_district_names = {normalize(d.get("name", "")) for d in districts}
-    if failed_districts and previous_notices:
-        cutoff = datetime.now(IST).date() - timedelta(days=30)
-        for old in previous_notices:
-            if old.get("scope", "district") == "national":
+    fresh_district_names = {
+        normalize(item.get("district", ""))
+        for item in all_fresh
+        if item.get("scope", "district") != "national" and not item.get("stale")
+    }
+    has_fresh_national = any(item.get("scope") == "national" and not item.get("stale") for item in all_fresh)
+    local_cutoff = datetime.now(IST).date() - timedelta(days=30)
+    national_cutoff = datetime.now(IST).date() - timedelta(days=14)
+    for old in previous_notices:
+        try:
+            old_date = datetime.fromisoformat(str(old.get("date", ""))).date()
+        except ValueError:
+            continue
+        scope = old.get("scope", "district")
+        if scope == "national":
+            # Keep recent PIB releases only when the current feed run yielded
+            # none; don't let old national headlines mask a working feed.
+            if has_fresh_national or old_date < national_cutoff:
                 continue
+        else:
             old_district = normalize(old.get("district", ""))
-            try:
-                old_date = datetime.fromisoformat(old.get("date", "")).date()
-            except ValueError:
+            if old_date < local_cutoff or old_district not in current_district_names:
                 continue
-            if old_district in failed_districts and old_date >= cutoff and old_district in current_district_names:
-                item = dict(old)
-                item["stale"] = True
-                all_fresh.append(item)
+            if old_district in fresh_district_names:
+                continue
+        cached_item = dict(old)
+        cached_item["stale"] = True
+        all_fresh.append(cached_item)
 
     all_fresh = [item for item in all_fresh if valid_notice_record(item)]
     unique = {}
