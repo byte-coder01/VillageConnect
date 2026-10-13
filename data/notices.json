@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T06:44:12+05:30",
+  "generatedAt": "2026-10-14T04:44:49+05:30",
   "status": "live",
   "noticeCount": 34,
   "districtsDiscovered": 13,
@@ -15,6 +15,116 @@
   ],
   "failedDistrictSources": 1,
   "notices": [
+    {
+      "scope": "district",
+      "district": "Uttarkashi",
+      "region": "Uttarakhand",
+      "category": "Government",
+      "date": "2026-10-13",
+      "time": "",
+      "title": "Press Notice(13-10-2026)",
+      "description": "Open the official notice for the full details.",
+      "source": "https://uttarkashi.nic.in/notice/press-notice13-10-2026/"
+    },
+    {
+      "scope": "district",
+      "district": "Uttarkashi",
+      "region": "Uttarakhand",
+      "category": "Government",
+      "date": "2026-10-13",
+      "time": "",
+      "title": "विशेष गहन पुनरीक्षण 2026",
+      "description": "Open the official notice for the full details.",
+      "source": "https://uttarkashi.nic.in/%e0%a4%9c%e0%a4%bf%e0%a4%b2%e0%a4%be-%e0%a4%a8%e0%a4%bf%e0%a4%b0%e0%a5%8d%e0%a4%b5%e0%a4%be%e0%a4%9a%e0%a4%a8-%e0%a4%85%e0%a4%a7%e0%a4%bf%e0%a4%95%e0%a4%be%e0%a4%b0%e0%a5%80-%e0%a4%aa%e0%a5%8b/%e0%a4%b5%e0%a4%bf%e0%a4%b6%e0%a5%87%e0%a4%b7-%e0%a4%97%e0%a4%b9%e0%a4%a8-%e0%a4%aa%e0%a5%81%e0%a4%a8%e0%a4%b0%e0%a5%80%e0%a4%95%e0%a5%8d%e0%a4%b7%e0%a4%a3-2026/"
+    },
+    {
+      "scope": "district",
+      "district": "Uttarkashi",
+      "region": "Uttarakhand",
+      "category": "Government",
+      "date": "2026-10-13",
+      "time": "",
+      "title": "कार्यालय अपर जिला कार्यक्रम समन्वयक, उत्तरकाशी / मुख्य विकास अधिकारी,उत्तरकाशी । विज्ञप्ति",
+      "description": "Open the official notice for the full details.",
+      "source": "https://uttarkashi.nic.in/notice/%e0%a4%95%e0%a4%be%e0%a4%b0%e0%a5%8d%e0%a4%af%e0%a4%be%e0%a4%b2%e0%a4%af-%e0%a4%85%e0%a4%aa%e0%a4%b0-%e0%a4%9c%e0%a4%bf%e0%a4%b2%e0%a4%be-%e0%a4%95%e0%a4%be%e0%a4%b0%e0%a5%8d%e0%a4%af%e0%a4%95/"
+    },
+    {
+      "scope": "district",
+      "district": "Uttarkashi",
+      "region": "Uttarakhand",
+      "category": "Government",
+      "date": "2026-10-13",
+      "time": "",
+      "title": "त्यूनी प्लासू (72 मेगावाट ) परियोजना की सामाजिक समाघात प्रबन्ध योजना (एस०आई०एम०पी०) एवं सामाजिक समाघात निर्धारण मूल्यांकन रिपोर्ट का प्रकाशन",
+      "description": "Open the official notice for the full details.",
+      "source": "https://uttarkashi.nic.in/notice/%e0%a4%a4%e0%a5%8d%e0%a4%af%e0%a5%82%e0%a4%a8%e0%a5%80-%e0%a4%aa%e0%a5%8d%e0%a4%b2%e0%a4%be%e0%a4%b8%e0%a5%82-72-%e0%a4%ae%e0%a5%87%e0%a4%97%e0%a4%be%e0%a4%b5%e0%a4%be%e0%a4%9f-%e0%a4%aa%e0%a4%b0/"
+    },
+    {
+      "scope": "district",
+      "district": "Uttarkashi",
+      "region": "Uttarakhand",
+      "category": "Government",
+      "date": "2026-10-13",
+      "time": "",
+      "title": "SWM OFFICE ORDER",
+      "description": "Open the official notice for the full details.",
+      "source": "https://uttarkashi.nic.in/swm-office-order/"
+    },
+    {
+      "scope": "district",
+      "district": "Uttarkashi",
+      "region": "Uttarakhand",
+      "category": "Government",
+      "date": "2026-10-13",
+      "time": "",
+      "title": "Minutes of Meeting (SWM)",
+      "description": "Open the official notice for the full details.",
+      "source": "https://uttarkashi.nic.in/meeting-of-meeting-swm/"
+    },
+    {
+      "scope": "district",
+      "district": "Uttarkashi",
+      "region": "Uttarakhand",
+      "category": "Government",
+      "date": "2026-10-13",
+      "time": "",
+      "title": "SWM-2026 Gazette Notification",
+      "description": "Open the official notice for the full details.",
+      "source": "https://uttarkashi.nic.in/swm-2026-gazzate-notification/"
+    },
+    {
+      "scope": "district",
+      "district": "Uttarkashi",
+      "region": "Uttarakhand",
+      "category": "Government",
+      "date": "2026-10-13",
+      "time": "",
+      "title": "Sanitation Campaign",
+      "description": "Open the official notice for the full details.",
+      "source": "https://uttarkashi.nic.in/sanitation-campaign/"
+    },
+    {
+      "scope": "district",
+      "district": "Uttarkashi",
+      "region": "Uttarakhand",
+      "category": "Government",
+      "date": "2026-10-13",
+      "time": "",
+      "title": "मा० मुख्यमंत्री उदीयमान छात्रवृति उन्नयन योजना वर्ष 2026-27 जनपद स्तर पर चयनित खिलाडियों की सूची",
+      "description": "Open the official notice for the full details.",
+      "source": "https://uttarkashi.nic.in/notice/%e0%a4%ae%e0%a4%be%e0%a5%a6-%e0%a4%ae%e0%a5%81%e0%a4%96%e0%a5%8d%e0%a4%af%e0%a4%ae%e0%a4%82%e0%a4%a4%e0%a5%8d%e0%a4%b0%e0%a5%80-%e0%a4%89%e0%a4%a6%e0%a5%80%e0%a4%af%e0%a4%ae%e0%a4%be%e0%a4%a8-2/"
+    },
+    {
+      "scope": "district",
+      "district": "Uttarkashi",
+      "region": "Uttarakhand",
+      "category": "Government",
+      "date": "2026-10-13",
+      "time": "",
+      "title": "Solid Waste Management",
+      "description": "Open the official notice for the full details.",
+      "source": "https://uttarkashi.nic.in/swm-rules-2026-2/"
+    },
     {
       "scope": "district",
       "district": "Tehri Garhwal",
@@ -50,28 +160,6 @@
     },
     {
       "scope": "district",
-      "district": "Uttarkashi",
-      "region": "Uttarakhand",
-      "category": "Government",
-      "date": "2026-09-28",
-      "time": "",
-      "title": "Announcements कार्यालय अपर जिला कार्यक्रम समन्वयक, उत्तरकाशी / मुख्य विकास अधिकारी,उत्तरकाशी । विज्ञप्ति New",
-      "description": "Open the official notice for the full details.",
-      "source": "https://uttarkashi.nic.in/notice/%e0%a4%95%e0%a4%be%e0%a4%b0%e0%a5%8d%e0%a4%af%e0%a4%be%e0%a4%b2%e0%a4%af-%e0%a4%85%e0%a4%aa%e0%a4%b0-%e0%a4%9c%e0%a4%bf%e0%a4%b2%e0%a4%be-%e0%a4%95%e0%a4%be%e0%a4%b0%e0%a5%8d%e0%a4%af%e0%a4%95/"
-    },
-    {
-      "scope": "district",
-      "district": "Uttarkashi",
-      "region": "Uttarakhand",
-      "category": "Tender",
-      "date": "2026-09-28",
-      "time": "",
-      "title": "Tender PWD Short-term Tender Notice(28-09-2026) New",
-      "description": "Open the official notice for the full details.",
-      "source": "https://uttarkashi.nic.in/notice/pwd-short-term-tender-notice28-09-2026/"
-    },
-    {
-      "scope": "district",
       "district": "Haridwar",
       "region": "Uttarakhand",
       "category": "Tender",
@@ -80,94 +168,6 @@
       "title": "Tender notice / Nagar Palika Parishad Manglore (No. 1431 Dated: 28.09.2026)",
       "description": "Open the official notice for the full details.",
       "source": "https://haridwar.nic.in/notice/tender-notice-nagar-palika-parishad-manglore-no-1431-dated-28-09-2026/"
-    },
-    {
-      "scope": "district",
-      "district": "Uttarkashi",
-      "region": "Uttarakhand",
-      "category": "Government",
-      "date": "2026-09-15",
-      "time": "",
-      "title": "विशेष गहन पुनरीक्षण 2026",
-      "description": "Open the official notice for the full details.",
-      "source": "https://uttarkashi.nic.in/%e0%a4%9c%e0%a4%bf%e0%a4%b2%e0%a4%be-%e0%a4%a8%e0%a4%bf%e0%a4%b0%e0%a5%8d%e0%a4%b5%e0%a4%be%e0%a4%9a%e0%a4%a8-%e0%a4%85%e0%a4%a7%e0%a4%bf%e0%a4%95%e0%a4%be%e0%a4%b0%e0%a5%80-%e0%a4%aa%e0%a5%8b/%e0%a4%b5%e0%a4%bf%e0%a4%b6%e0%a5%87%e0%a4%b7-%e0%a4%97%e0%a4%b9%e0%a4%a8-%e0%a4%aa%e0%a5%81%e0%a4%a8%e0%a4%b0%e0%a5%80%e0%a4%95%e0%a5%8d%e0%a4%b7%e0%a4%a3-2026/"
-    },
-    {
-      "scope": "district",
-      "district": "Uttarkashi",
-      "region": "Uttarakhand",
-      "category": "Government",
-      "date": "2026-09-15",
-      "time": "",
-      "title": "कार्यालय अपर जिला कार्यक्रम समन्वयक, उत्तरकाशी / मुख्य विकास अधिकारी,उत्तरकाशी । विज्ञप्ति",
-      "description": "Open the official notice for the full details.",
-      "source": "https://uttarkashi.nic.in/notice/%e0%a4%95%e0%a4%be%e0%a4%b0%e0%a5%8d%e0%a4%af%e0%a4%be%e0%a4%b2%e0%a4%af-%e0%a4%85%e0%a4%aa%e0%a4%b0-%e0%a4%9c%e0%a4%bf%e0%a4%b2%e0%a4%be-%e0%a4%95%e0%a4%be%e0%a4%b0%e0%a5%8d%e0%a4%af%e0%a4%95/"
-    },
-    {
-      "scope": "district",
-      "district": "Uttarkashi",
-      "region": "Uttarakhand",
-      "category": "Government",
-      "date": "2026-09-15",
-      "time": "",
-      "title": "नागरिक अधिकार पत्र (15-09-2026)",
-      "description": "Open the official notice for the full details.",
-      "source": "https://uttarkashi.nic.in/notice/%e0%a4%a8%e0%a4%be%e0%a4%97%e0%a4%b0%e0%a4%bf%e0%a4%95-%e0%a4%85%e0%a4%a7%e0%a4%bf%e0%a4%95%e0%a4%be%e0%a4%b0-%e0%a4%aa%e0%a4%a4%e0%a5%8d%e0%a4%b0-15-09-2026/"
-    },
-    {
-      "scope": "district",
-      "district": "Uttarkashi",
-      "region": "Uttarakhand",
-      "category": "Government",
-      "date": "2026-09-15",
-      "time": "",
-      "title": "त्यूनी प्लासू (72 मेगावाट ) परियोजना की सामाजिक समाघात प्रबन्ध योजना (एस०आई०एम०पी०) एवं सामाजिक समाघात निर्धारण मूल्यांकन रिपोर्ट का प्रकाशन",
-      "description": "Open the official notice for the full details.",
-      "source": "https://uttarkashi.nic.in/notice/%e0%a4%a4%e0%a5%8d%e0%a4%af%e0%a5%82%e0%a4%a8%e0%a5%80-%e0%a4%aa%e0%a5%8d%e0%a4%b2%e0%a4%be%e0%a4%b8%e0%a5%82-72-%e0%a4%ae%e0%a5%87%e0%a4%97%e0%a4%be%e0%a4%b5%e0%a4%be%e0%a4%9f-%e0%a4%aa%e0%a4%b0/"
-    },
-    {
-      "scope": "district",
-      "district": "Uttarkashi",
-      "region": "Uttarakhand",
-      "category": "Government",
-      "date": "2026-09-15",
-      "time": "",
-      "title": "SWM OFFICE ORDER",
-      "description": "Open the official notice for the full details.",
-      "source": "https://uttarkashi.nic.in/swm-office-order/"
-    },
-    {
-      "scope": "district",
-      "district": "Uttarkashi",
-      "region": "Uttarakhand",
-      "category": "Government",
-      "date": "2026-09-15",
-      "time": "",
-      "title": "Minutes of Meeting (SWM)",
-      "description": "Open the official notice for the full details.",
-      "source": "https://uttarkashi.nic.in/meeting-of-meeting-swm/"
-    },
-    {
-      "scope": "district",
-      "district": "Uttarkashi",
-      "region": "Uttarakhand",
-      "category": "Government",
-      "date": "2026-09-15",
-      "time": "",
-      "title": "SWM-2026 Gazette Notification",
-      "description": "Open the official notice for the full details.",
-      "source": "https://uttarkashi.nic.in/swm-2026-gazzate-notification/"
-    },
-    {
-      "scope": "district",
-      "district": "Uttarkashi",
-      "region": "Uttarakhand",
-      "category": "Government",
-      "date": "2026-09-15",
-      "time": "",
-      "title": "Sanitation Campaign",
-      "description": "Open the official notice for the full details.",
-      "source": "https://uttarkashi.nic.in/sanitation-campaign/"
     },
     {
       "scope": "district",
