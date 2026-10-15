@@ -969,31 +969,44 @@ html.night-mode body.high-contrast .notice-location-form .location-privacy-note 
   .settings-layout .settings-art { aspect-ratio: 1 / 1; }
 }
 
-/* Contact page: make the selected topic unmistakable in Night Mode.
-   Keep the unselected choices dark; highlight the selected choice with a checkmark. */
-html.night-mode body:not(.high-contrast) .feedback-options input:checked + span {
-  background-color: #ffe29a !important;
-  color: #15243b !important;
-  border-color: #ffe29a !important;
-  font-weight: 800;
-  box-shadow: inset 0 0 0 1px #15243b;
+/* Contact page: make topic choices readable and the checked topic unmistakable in Night Mode. */
+html.night-mode body[data-page="contact"]:not(.high-contrast) .feedback-options label span {
+  background: #111d32 !important;
+  color: #f3f7ff !important;
+  border: 1px solid #8394ad !important;
+  font-weight: 600;
 }
-html.night-mode body:not(.high-contrast) .feedback-options input:checked + span::before {
+html.night-mode body[data-page="contact"]:not(.high-contrast) .feedback-options input:checked + span {
+  background: #ffe29a !important;
+  color: #15243b !important;
+  border: 2px solid #ffe29a !important;
+  font-weight: 900 !important;
+  box-shadow: 0 0 0 2px #111d32, 0 0 0 4px #ffe29a !important;
+}
+html.night-mode body[data-page="contact"]:not(.high-contrast) .feedback-options input:checked + span::before {
   content: "\2713";
   display: inline-block;
-  margin-right: .35rem;
+  margin-right: .4rem;
+  font-weight: 900;
 }
 
-html.night-mode body.high-contrast .feedback-options input:checked + span {
+html.night-mode body.high-contrast[data-page="contact"] .feedback-options label span {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  font-weight: 700;
+  box-shadow: none !important;
+}
+html.night-mode body.high-contrast[data-page="contact"] .feedback-options input:checked + span {
   background: #ffd400 !important;
   color: #000000 !important;
   border: 2px solid #ffd400 !important;
-  font-weight: 900;
-  box-shadow: inset 0 0 0 2px #000000;
+  font-weight: 900 !important;
+  box-shadow: 0 0 0 2px #000000, 0 0 0 4px #ffd400 !important;
 }
-html.night-mode body.high-contrast .feedback-options input:checked + span::before {
+html.night-mode body.high-contrast[data-page="contact"] .feedback-options input:checked + span::before {
   content: "\2713";
   display: inline-block;
-  margin-right: .35rem;
+  margin-right: .4rem;
+  font-weight: 900;
 }
-
