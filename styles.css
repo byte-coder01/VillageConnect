@@ -977,11 +977,12 @@ html.night-mode body[data-page="contact"]:not(.high-contrast) .feedback-options 
   font-weight: 600;
 }
 html.night-mode body[data-page="contact"]:not(.high-contrast) .feedback-options input:checked + span {
-  background: #ffe29a !important;
-  color: #15243b !important;
-  border: 2px solid #ffe29a !important;
+  background: #f07842 !important;
+  color: #101a2e !important;
+  border: 0 !important;
+  outline: none !important;
   font-weight: 900 !important;
-  box-shadow: 0 0 0 2px #111d32, 0 0 0 4px #ffe29a !important;
+  box-shadow: none !important;
 }
 html.night-mode body[data-page="contact"]:not(.high-contrast) .feedback-options input:checked + span::before {
   content: "\2713";
@@ -998,11 +999,12 @@ html.night-mode body.high-contrast[data-page="contact"] .feedback-options label 
   box-shadow: none !important;
 }
 html.night-mode body.high-contrast[data-page="contact"] .feedback-options input:checked + span {
-  background: #ffd400 !important;
+  background: #ffeb00 !important;
   color: #000000 !important;
-  border: 2px solid #ffd400 !important;
+  border: 0 !important;
+  outline: none !important;
   font-weight: 900 !important;
-  box-shadow: 0 0 0 2px #000000, 0 0 0 4px #ffd400 !important;
+  box-shadow: none !important;
 }
 html.night-mode body.high-contrast[data-page="contact"] .feedback-options input:checked + span::before {
   content: "\2713";
