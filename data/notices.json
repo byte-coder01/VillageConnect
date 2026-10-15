@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-15T03:42:43+05:30",
+  "generatedAt": "2026-10-15T18:29:31+05:30",
   "status": "live",
-  "noticeCount": 34,
+  "noticeCount": 35,
   "districtsDiscovered": 13,
   "districtSourcesResponded": 12,
   "directoryStatus": "cached-registry",
@@ -15,6 +15,17 @@
   ],
   "failedDistrictSources": 1,
   "notices": [
+    {
+      "scope": "district",
+      "district": "Haridwar",
+      "region": "Uttarakhand",
+      "category": "Tender",
+      "date": "2026-10-14",
+      "time": "",
+      "title": "Tender notice / Nagar Palika Parishad Manglore (No. 1586 Dated: 14.10.2026)",
+      "description": "Open the official notice for the full details.",
+      "source": "https://haridwar.nic.in/notice/tender-notice-nagar-palika-parishad-manglore-no-1586-dated-14-10-2026/"
+    },
     {
       "scope": "district",
       "district": "Uttarkashi",
