@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-15T21:06:38+05:30",
+  "generatedAt": "2026-10-16T10:20:37+05:30",
   "status": "live",
-  "noticeCount": 35,
+  "noticeCount": 34,
   "districtsDiscovered": 13,
   "districtSourcesResponded": 12,
   "directoryStatus": "cached-registry",
@@ -168,17 +168,6 @@
       "title": "Tender notice / Executive Engineer , RWD Haridwar (No. 1356 Dated: 07.10.2026)",
       "description": "Open the official notice for the full details.",
       "source": "https://haridwar.nic.in/notice/tender-notice-executive-engineer-rwd-haridwar-no-1356-dated-07-10-2026/"
-    },
-    {
-      "scope": "district",
-      "district": "Haridwar",
-      "region": "Uttarakhand",
-      "category": "Tender",
-      "date": "2026-09-28",
-      "time": "",
-      "title": "Tender notice / Nagar Palika Parishad Manglore (No. 1431 Dated: 28.09.2026)",
-      "description": "Open the official notice for the full details.",
-      "source": "https://haridwar.nic.in/notice/tender-notice-nagar-palika-parishad-manglore-no-1431-dated-28-09-2026/"
     },
     {
       "scope": "district",
