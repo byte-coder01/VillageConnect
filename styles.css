@@ -191,7 +191,7 @@ h3 { font: 600 1.25rem/1.2 'Playfair Display', Georgia, serif; }
 .filter-chip:hover { border-color: #b8c8bd; }
 .filter-chip.selected { background: var(--forest); color: white; }
 .result-count { margin: .75rem 0 1rem; color: #85928c; font-size: .6rem; }
-.notice-card { display: flex; align-items: center; gap: .75rem; padding: 1rem; margin-top: 1.4rem; background: #f28a75; color: #5b6e69; }
+.notice-card { display: flex; align-items: center; gap: .75rem; padding: 1rem; margin-top: 1.4rem; background: #edf2eb; color: #5b6e69; }
 .notice-card>span { color: var(--teal); font-size: 1rem; }
 .notice-card p { flex: 1; margin: 0; font-size: .65rem; line-height: 1.6; }
 .notice-card a { font-size: .62rem; font-weight: 700; white-space: nowrap; }
