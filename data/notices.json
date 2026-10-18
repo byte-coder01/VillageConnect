@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-17T10:20:57+05:30",
+  "generatedAt": "2026-10-18T10:27:10+05:30",
   "status": "live",
-  "noticeCount": 34,
+  "noticeCount": 31,
   "districtsDiscovered": 13,
   "districtSourcesResponded": 12,
   "directoryStatus": "cached-registry",
@@ -25,6 +25,17 @@
       "title": "Tender notice / Nagar Palika Parishad Manglore (No. 1586 Dated: 14.10.2026)",
       "description": "Open the official notice for the full details.",
       "source": "https://haridwar.nic.in/notice/tender-notice-nagar-palika-parishad-manglore-no-1586-dated-14-10-2026/"
+    },
+    {
+      "scope": "district",
+      "district": "Haridwar",
+      "region": "Uttarakhand",
+      "category": "Government",
+      "date": "2026-10-14",
+      "time": "",
+      "title": "List of Applicant warden for NSCB Hostel Haridwar",
+      "description": "Open the official notice for the full details.",
+      "source": "https://haridwar.nic.in/list-of-applicant-warden-for-nscb-hostel-haridwar/"
     },
     {
       "scope": "district",
@@ -179,50 +190,6 @@
       "title": "District Magistrate, Pauri Garhwal inspected the Special Intensive Revision work and issued instructions to make the process simple and convenient.",
       "description": "Open the official notice for the full details.",
       "source": "https://cdn.s3waas.gov.in/s32f55707d4193dc27118a0f19a1985716/uploads/2026/08/17865357159419.pdf"
-    },
-    {
-      "scope": "district",
-      "district": "Haridwar",
-      "region": "Uttarakhand",
-      "category": "Government",
-      "date": "2026-08-07",
-      "time": "",
-      "title": "List of Applicant warden for NSCB Hostel Haridwar",
-      "description": "Open the official notice for the full details.",
-      "source": "https://haridwar.nic.in/list-of-applicant-warden-for-nscb-hostel-haridwar/"
-    },
-    {
-      "scope": "district",
-      "district": "Haridwar",
-      "region": "Uttarakhand",
-      "category": "Government",
-      "date": "2026-08-07",
-      "time": "",
-      "title": "Regarding vacancies for advocate in Haridwar district who have completed a five-year tenure in criminal cases.",
-      "description": "Open the official notice for the full details.",
-      "source": "https://haridwar.nic.in/in-reference-to-letter-from-additional-secretary-justice-section-1-justice-and-additional-legal-advisor-uttarakhand-government-dehradun-letter-no-3-na-va-b-xxxvi-a-1-2026-02-na-va-b-2026-dated/"
-    },
-    {
-      "scope": "district",
-      "district": "Haridwar",
-      "region": "Uttarakhand",
-      "category": "Government",
-      "date": "2026-08-07",
-      "time": "",
-      "title": "Invitation of Expression of Interest to run nagar nigam roorkee Gaushala( Dated : 07-08-2026)",
-      "description": "Open the official notice for the full details.",
-      "source": "https://haridwar.nic.in/invitation-of-expression-of-interest-to-run-nagar-nigam-roorkee-gaushala-dated-07-08-2026/"
-    },
-    {
-      "scope": "district",
-      "district": "Haridwar",
-      "region": "Uttarakhand",
-      "category": "Government",
-      "date": "2026-08-07",
-      "time": "",
-      "title": "Government Order No. 409727 XII(1)/26/86(26)2016/E-38711 dated July 1, 2026.",
-      "description": "Open the official notice for the full details.",
-      "source": "https://haridwar.nic.in/government-order-no-409727-xii1-26-86262016-e-38711-dated-july-1-2026/"
     },
     {
       "scope": "district",
