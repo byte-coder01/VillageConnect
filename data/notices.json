@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-19T10:36:02+05:30",
+  "generatedAt": "2026-10-20T10:38:17+05:30",
   "status": "live",
-  "noticeCount": 31,
+  "noticeCount": 30,
   "districtsDiscovered": 13,
   "districtSourcesResponded": 12,
   "directoryStatus": "cached-registry",
@@ -15,28 +15,6 @@
   ],
   "failedDistrictSources": 1,
   "notices": [
-    {
-      "scope": "district",
-      "district": "Haridwar",
-      "region": "Uttarakhand",
-      "category": "Tender",
-      "date": "2026-10-14",
-      "time": "",
-      "title": "Tender notice / Nagar Palika Parishad Manglore (No. 1586 Dated: 14.10.2026)",
-      "description": "Open the official notice for the full details.",
-      "source": "https://haridwar.nic.in/notice/tender-notice-nagar-palika-parishad-manglore-no-1586-dated-14-10-2026/"
-    },
-    {
-      "scope": "district",
-      "district": "Haridwar",
-      "region": "Uttarakhand",
-      "category": "Government",
-      "date": "2026-10-14",
-      "time": "",
-      "title": "List of Applicant warden for NSCB Hostel Haridwar",
-      "description": "Open the official notice for the full details.",
-      "source": "https://haridwar.nic.in/list-of-applicant-warden-for-nscb-hostel-haridwar/"
-    },
     {
       "scope": "district",
       "district": "Uttarkashi",
@@ -179,6 +157,17 @@
       "title": "Tender notice / Executive Engineer , RWD Haridwar (No. 1356 Dated: 07.10.2026)",
       "description": "Open the official notice for the full details.",
       "source": "https://haridwar.nic.in/notice/tender-notice-executive-engineer-rwd-haridwar-no-1356-dated-07-10-2026/"
+    },
+    {
+      "scope": "district",
+      "district": "Haridwar",
+      "region": "Uttarakhand",
+      "category": "Government",
+      "date": "2026-10-07",
+      "time": "",
+      "title": "List of Applicant warden for NSCB Hostel Haridwar",
+      "description": "Open the official notice for the full details.",
+      "source": "https://haridwar.nic.in/list-of-applicant-warden-for-nscb-hostel-haridwar/"
     },
     {
       "scope": "district",
