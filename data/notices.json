@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-21T10:39:21+05:30",
+  "generatedAt": "2026-10-22T10:42:38+05:30",
   "status": "live",
-  "noticeCount": 30,
+  "noticeCount": 31,
   "districtsDiscovered": 13,
   "districtSourcesResponded": 12,
   "directoryStatus": "cached-registry",
@@ -15,6 +15,17 @@
   ],
   "failedDistrictSources": 1,
   "notices": [
+    {
+      "scope": "district",
+      "district": "Pauri Garhwal",
+      "region": "Uttarakhand",
+      "category": "Election",
+      "date": "2026-10-22",
+      "time": "",
+      "title": "Special Summary Revison (SSR) of Photo Electoral Rolls w.r.t. Ol- 01-2027 the qualifying date-regarding.",
+      "description": "Open the official notice for the full details.",
+      "source": "https://cdn.s3waas.gov.in/s32f55707d4193dc27118a0f19a1985716/uploads/2026/10/17926453232211.pdf"
+    },
     {
       "scope": "district",
       "district": "Uttarkashi",
@@ -121,7 +132,7 @@
       "category": "Government",
       "date": "2026-10-13",
       "time": "",
-      "title": "Solid Waste Management",
+      "title": "SOLID WASTE MANAGEMENT",
       "description": "Open the official notice for the full details.",
       "source": "https://uttarkashi.nic.in/swm-rules-2026-2/"
     },
@@ -162,8 +173,19 @@
       "scope": "district",
       "district": "Haridwar",
       "region": "Uttarakhand",
+      "category": "Tender",
+      "date": "2026-10-06",
+      "time": "",
+      "title": "Tender notice / BDO Narsan (No. 1198 Dated: 06.10.2026)",
+      "description": "Open the official notice for the full details.",
+      "source": "https://haridwar.nic.in/notice/tender-notice-bdo-narsan-no-1198-dated-06-10-2026/"
+    },
+    {
+      "scope": "district",
+      "district": "Haridwar",
+      "region": "Uttarakhand",
       "category": "Government",
-      "date": "2026-10-07",
+      "date": "2026-10-06",
       "time": "",
       "title": "List of Applicant warden for NSCB Hostel Haridwar",
       "description": "Open the official notice for the full details.",
@@ -267,17 +289,6 @@
       "title": "Regarding Nodal Officer order-2.",
       "description": "Open the official notice for the full details.",
       "source": "https://cdn.s3waas.gov.in/s32f55707d4193dc27118a0f19a1985716/uploads/2026/06/17806628908020.pdf"
-    },
-    {
-      "scope": "district",
-      "district": "Pauri Garhwal",
-      "region": "Uttarakhand",
-      "category": "Government",
-      "date": "2026-06-05",
-      "time": "",
-      "title": "Regarding Nodal Officer order-3.",
-      "description": "Open the official notice for the full details.",
-      "source": "https://cdn.s3waas.gov.in/s32f55707d4193dc27118a0f19a1985716/uploads/2026/06/17806629256671.pdf"
     },
     {
       "scope": "district",
