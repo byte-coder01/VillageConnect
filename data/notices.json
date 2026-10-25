@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-24T10:24:53+05:30",
+  "generatedAt": "2026-10-25T10:36:09+05:30",
   "status": "live",
-  "noticeCount": 30,
+  "noticeCount": 31,
   "districtsDiscovered": 13,
   "districtSourcesResponded": 12,
   "directoryStatus": "cached-registry",
@@ -18,36 +18,25 @@
   "notices": [
     {
       "scope": "district",
-      "district": "Pauri Garhwal",
+      "district": "Tehri Garhwal",
       "region": "Uttarakhand",
-      "category": "Election",
-      "date": "2026-10-22",
+      "category": "Education",
+      "date": "2026-10-24",
       "time": "",
-      "title": "Special Summary Revison (SSR) of Photo Electoral Rolls w.r.t. Ol- 01-2027 the qualifying date-regarding.",
+      "title": "Request for Quotation : Chief Education Officer Tehri Garhwal",
       "description": "Open the official notice for the full details.",
-      "source": "https://cdn.s3waas.gov.in/s32f55707d4193dc27118a0f19a1985716/uploads/2026/10/17926453232211.pdf"
+      "source": "https://cdn.s3waas.gov.in/s3258be18e31c8188555c2ff05b4d542c3/uploads/2026/10/17928216764706.pdf"
     },
     {
       "scope": "district",
       "district": "Tehri Garhwal",
       "region": "Uttarakhand",
       "category": "Tender",
-      "date": "2026-10-22",
+      "date": "2026-10-23",
       "time": "",
-      "title": "Tender Notice for the Construction of Devbhoomi Rajat Jayanti Park : Nagar Panchayat Chamiyala, Tehri Garhwal",
+      "title": "Notice Inviting Tender : Block Development Officer, Jakhanidhar Tehri Garhwal",
       "description": "Open the official notice for the full details.",
-      "source": "https://cdn.s3waas.gov.in/s3258be18e31c8188555c2ff05b4d542c3/uploads/2026/10/17927362299867.pdf"
-    },
-    {
-      "scope": "district",
-      "district": "Tehri Garhwal",
-      "region": "Uttarakhand",
-      "category": "Tender",
-      "date": "2026-10-22",
-      "time": "",
-      "title": "“E” Procurement Notice : UREDA Tehri Garhwal",
-      "description": "Open the official notice for the full details.",
-      "source": "https://cdn.s3waas.gov.in/s3258be18e31c8188555c2ff05b4d542c3/uploads/2026/10/17927292435453.pdf"
+      "source": "https://cdn.s3waas.gov.in/s3258be18e31c8188555c2ff05b4d542c3/uploads/2026/10/17928298188169.pdf"
     },
     {
       "scope": "district",
@@ -161,10 +150,32 @@
     },
     {
       "scope": "district",
+      "district": "Pauri Garhwal",
+      "region": "Uttarakhand",
+      "category": "Election",
+      "date": "2026-10-22",
+      "time": "",
+      "title": "Special Summary Revison (SSR) of Photo Electoral Rolls w.r.t. Ol- 01-2027 the qualifying date-regarding.",
+      "description": "Open the official notice for the full details.",
+      "source": "https://cdn.s3waas.gov.in/s32f55707d4193dc27118a0f19a1985716/uploads/2026/10/17926453232211.pdf"
+    },
+    {
+      "scope": "district",
+      "district": "Haridwar",
+      "region": "Uttarakhand",
+      "category": "Tender",
+      "date": "2026-10-15",
+      "time": "",
+      "title": "Tender notice / BDO Narsan (No. 1243 Dated: 15.10.2026)",
+      "description": "Open the official notice for the full details.",
+      "source": "https://haridwar.nic.in/notice/tender-notice-bdo-narsan-no-1243-dated-15-10-2026/"
+    },
+    {
+      "scope": "district",
       "district": "Haridwar",
       "region": "Uttarakhand",
       "category": "Election",
-      "date": "2026-09-19",
+      "date": "2026-10-15",
       "time": "",
       "title": "First FLC of EVM and VVPAT for the upcoming General Elections 2027",
       "description": "Open the official notice for the full details.",
@@ -175,7 +186,7 @@
       "district": "Haridwar",
       "region": "Uttarakhand",
       "category": "Government",
-      "date": "2026-09-19",
+      "date": "2026-10-15",
       "time": "",
       "title": "List of Applicant warden for NSCB Hostel Haridwar",
       "description": "Open the official notice for the full details.",
