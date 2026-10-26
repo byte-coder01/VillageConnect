@@ -1,20 +1,18 @@
 {
-  "generatedAt": "2026-10-25T10:36:09+05:30",
+  "generatedAt": "2026-10-26T10:43:01+05:30",
   "status": "live",
   "noticeCount": 31,
   "districtsDiscovered": 13,
-  "districtSourcesResponded": 12,
+  "districtSourcesResponded": 11,
   "directoryStatus": "cached-registry",
   "parserWarnings": [
     "almora",
     "bageshwar",
-    "chamoli",
     "pauri garhwal",
-    "rudraprayag",
     "udham singh nagar",
     "uttarkashi"
   ],
-  "failedDistrictSources": 1,
+  "failedDistrictSources": 2,
   "notices": [
     {
       "scope": "district",
