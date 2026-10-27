@@ -1,18 +1,20 @@
 {
-  "generatedAt": "2026-10-26T10:43:01+05:30",
+  "generatedAt": "2026-10-27T10:54:30+05:30",
   "status": "live",
   "noticeCount": 31,
   "districtsDiscovered": 13,
-  "districtSourcesResponded": 11,
+  "districtSourcesResponded": 12,
   "directoryStatus": "cached-registry",
   "parserWarnings": [
     "almora",
     "bageshwar",
+    "chamoli",
     "pauri garhwal",
+    "rudraprayag",
     "udham singh nagar",
     "uttarkashi"
   ],
-  "failedDistrictSources": 2,
+  "failedDistrictSources": 1,
   "notices": [
     {
       "scope": "district",
@@ -35,6 +37,17 @@
       "title": "Notice Inviting Tender : Block Development Officer, Jakhanidhar Tehri Garhwal",
       "description": "Open the official notice for the full details.",
       "source": "https://cdn.s3waas.gov.in/s3258be18e31c8188555c2ff05b4d542c3/uploads/2026/10/17928298188169.pdf"
+    },
+    {
+      "scope": "district",
+      "district": "Pauri Garhwal",
+      "region": "Uttarakhand",
+      "category": "Election",
+      "date": "2026-10-22",
+      "time": "",
+      "title": "Special Summary Revison (SSR) of Photo Electoral Rolls w.r.t. Ol- 01-2027 the qualifying date-regarding.",
+      "description": "Open the official notice for the full details.",
+      "source": "https://cdn.s3waas.gov.in/s32f55707d4193dc27118a0f19a1985716/uploads/2026/10/17926453232211.pdf"
     },
     {
       "scope": "district",
@@ -145,17 +158,6 @@
       "title": "SOLID WASTE MANAGEMENT",
       "description": "Open the official notice for the full details.",
       "source": "https://uttarkashi.nic.in/swm-rules-2026-2/"
-    },
-    {
-      "scope": "district",
-      "district": "Pauri Garhwal",
-      "region": "Uttarakhand",
-      "category": "Election",
-      "date": "2026-10-22",
-      "time": "",
-      "title": "Special Summary Revison (SSR) of Photo Electoral Rolls w.r.t. Ol- 01-2027 the qualifying date-regarding.",
-      "description": "Open the official notice for the full details.",
-      "source": "https://cdn.s3waas.gov.in/s32f55707d4193dc27118a0f19a1985716/uploads/2026/10/17926453232211.pdf"
     },
     {
       "scope": "district",
