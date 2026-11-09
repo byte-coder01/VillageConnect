@@ -1,7 +1,7 @@
 
 # Custom Restricted Use License
 
-Copyright © 2026 byte-coder01 and JSCode. All rights reserved.
+Copyright © 2026 byte-coder01 and bytevance18(JSCode). All rights reserved.
 
 ## 1. Prior Permission Required
 
