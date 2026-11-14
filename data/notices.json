@@ -1,20 +1,18 @@
 {
-  "generatedAt": "2026-11-13T12:35:15+05:30",
+  "generatedAt": "2026-11-14T12:27:17+05:30",
   "status": "live",
   "noticeCount": 32,
   "districtsDiscovered": 13,
-  "districtSourcesResponded": 12,
+  "districtSourcesResponded": 11,
   "directoryStatus": "cached-registry",
   "parserWarnings": [
     "almora",
     "bageshwar",
-    "chamoli",
     "pauri garhwal",
-    "rudraprayag",
     "udham singh nagar",
     "uttarkashi"
   ],
-  "failedDistrictSources": 1,
+  "failedDistrictSources": 2,
   "notices": [
     {
       "scope": "district",
@@ -183,17 +181,6 @@
     },
     {
       "scope": "district",
-      "district": "Tehri Garhwal",
-      "region": "Uttarakhand",
-      "category": "Tender",
-      "date": "2026-10-23",
-      "time": "",
-      "title": "Notice Inviting Tender : Block Development Officer, Jakhanidhar Tehri Garhwal",
-      "description": "Open the official notice for the full details.",
-      "source": "https://cdn.s3waas.gov.in/s3258be18e31c8188555c2ff05b4d542c3/uploads/2026/10/17928298188169.pdf"
-    },
-    {
-      "scope": "district",
       "district": "Pauri Garhwal",
       "region": "Uttarakhand",
       "category": "Election",
@@ -202,6 +189,17 @@
       "title": "Special Summary Revison (SSR) of Photo Electoral Rolls w.r.t. Ol- 01-2027 the qualifying date-regarding.",
       "description": "Open the official notice for the full details.",
       "source": "https://cdn.s3waas.gov.in/s32f55707d4193dc27118a0f19a1985716/uploads/2026/10/17926453232211.pdf"
+    },
+    {
+      "scope": "district",
+      "district": "Tehri Garhwal",
+      "region": "Uttarakhand",
+      "category": "Government",
+      "date": "2026-10-01",
+      "time": "",
+      "title": "List of 300 selected players under the Chief Minister Udiyaman Khiladi Unnayan Yojana (2026–27) : Office of the District Sports Officer, Narendra Nagar, Tehri Garhwal",
+      "description": "Open the official notice for the full details.",
+      "source": "https://cdn.s3waas.gov.in/s3258be18e31c8188555c2ff05b4d542c3/uploads/2026/10/17908479922225.pdf"
     },
     {
       "scope": "district",
