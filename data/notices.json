@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-14T12:27:17+05:30",
+  "generatedAt": "2026-11-15T12:31:45+05:30",
   "status": "live",
-  "noticeCount": 32,
+  "noticeCount": 31,
   "districtsDiscovered": 13,
   "districtSourcesResponded": 11,
   "directoryStatus": "cached-registry",
@@ -137,50 +137,6 @@
     },
     {
       "scope": "district",
-      "district": "Haridwar",
-      "region": "Uttarakhand",
-      "category": "Tender",
-      "date": "2026-10-24",
-      "time": "",
-      "title": "Tender notice / Nagar Panchayat Jhabreda Haridwar ( No. 272 Dated: 24.10.2026)",
-      "description": "Open the official notice for the full details.",
-      "source": "https://haridwar.nic.in/notice/tender-notice-nagar-panchayat-jhabreda-haridwar-no-272-dated-24-10-2026/"
-    },
-    {
-      "scope": "district",
-      "district": "Haridwar",
-      "region": "Uttarakhand",
-      "category": "Election",
-      "date": "2026-10-24",
-      "time": "",
-      "title": "Assembly Election 2026-27",
-      "description": "Open the official notice for the full details.",
-      "source": "https://haridwar.nic.in/assembly-election-2026-27/"
-    },
-    {
-      "scope": "district",
-      "district": "Haridwar",
-      "region": "Uttarakhand",
-      "category": "Election",
-      "date": "2026-10-24",
-      "time": "",
-      "title": "First FLC of EVM and VVPAT for the upcoming General Elections 2027",
-      "description": "Open the official notice for the full details.",
-      "source": "https://haridwar.nic.in/first-flc-of-evm-and-vvpat-for-the-upcoming-general-elections-2027/"
-    },
-    {
-      "scope": "district",
-      "district": "Haridwar",
-      "region": "Uttarakhand",
-      "category": "Government",
-      "date": "2026-10-24",
-      "time": "",
-      "title": "List of Applicant warden for NSCB Hostel Haridwar",
-      "description": "Open the official notice for the full details.",
-      "source": "https://haridwar.nic.in/list-of-applicant-warden-for-nscb-hostel-haridwar/"
-    },
-    {
-      "scope": "district",
       "district": "Pauri Garhwal",
       "region": "Uttarakhand",
       "category": "Election",
@@ -200,6 +156,39 @@
       "title": "List of 300 selected players under the Chief Minister Udiyaman Khiladi Unnayan Yojana (2026–27) : Office of the District Sports Officer, Narendra Nagar, Tehri Garhwal",
       "description": "Open the official notice for the full details.",
       "source": "https://cdn.s3waas.gov.in/s3258be18e31c8188555c2ff05b4d542c3/uploads/2026/10/17908479922225.pdf"
+    },
+    {
+      "scope": "district",
+      "district": "Haridwar",
+      "region": "Uttarakhand",
+      "category": "Election",
+      "date": "2026-09-19",
+      "time": "",
+      "title": "Assembly Election 2026-27",
+      "description": "Open the official notice for the full details.",
+      "source": "https://haridwar.nic.in/assembly-election-2026-27/"
+    },
+    {
+      "scope": "district",
+      "district": "Haridwar",
+      "region": "Uttarakhand",
+      "category": "Election",
+      "date": "2026-09-19",
+      "time": "",
+      "title": "First FLC of EVM and VVPAT for the upcoming General Elections 2027",
+      "description": "Open the official notice for the full details.",
+      "source": "https://haridwar.nic.in/first-flc-of-evm-and-vvpat-for-the-upcoming-general-elections-2027/"
+    },
+    {
+      "scope": "district",
+      "district": "Haridwar",
+      "region": "Uttarakhand",
+      "category": "Government",
+      "date": "2026-09-19",
+      "time": "",
+      "title": "List of Applicant warden for NSCB Hostel Haridwar",
+      "description": "Open the official notice for the full details.",
+      "source": "https://haridwar.nic.in/list-of-applicant-warden-for-nscb-hostel-haridwar/"
     },
     {
       "scope": "district",
