@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T13:52:47+05:30",
+  "generatedAt": "2026-11-18T13:21:05+05:30",
   "status": "live",
   "noticeCount": 31,
   "districtsDiscovered": 13,
@@ -14,6 +14,17 @@
   ],
   "failedDistrictSources": 2,
   "notices": [
+    {
+      "scope": "district",
+      "district": "Tehri Garhwal",
+      "region": "Uttarakhand",
+      "category": "Election",
+      "date": "2026-11-17",
+      "time": "",
+      "title": "EVM Demonstration Schedule",
+      "description": "Open the official notice for the full details.",
+      "source": "https://cdn.s3waas.gov.in/s3258be18e31c8188555c2ff05b4d542c3/uploads/2026/11/17949066639047.pdf"
+    },
     {
       "scope": "district",
       "district": "Uttarkashi",
@@ -145,17 +156,6 @@
       "title": "Special Summary Revison (SSR) of Photo Electoral Rolls w.r.t. Ol- 01-2027 the qualifying date-regarding.",
       "description": "Open the official notice for the full details.",
       "source": "https://cdn.s3waas.gov.in/s32f55707d4193dc27118a0f19a1985716/uploads/2026/10/17926453232211.pdf"
-    },
-    {
-      "scope": "district",
-      "district": "Tehri Garhwal",
-      "region": "Uttarakhand",
-      "category": "Government",
-      "date": "2026-10-01",
-      "time": "",
-      "title": "List of 300 selected players under the Chief Minister Udiyaman Khiladi Unnayan Yojana (2026–27) : Office of the District Sports Officer, Narendra Nagar, Tehri Garhwal",
-      "description": "Open the official notice for the full details.",
-      "source": "https://cdn.s3waas.gov.in/s3258be18e31c8188555c2ff05b4d542c3/uploads/2026/10/17908479922225.pdf"
     },
     {
       "scope": "district",
