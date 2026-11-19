@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T13:21:05+05:30",
+  "generatedAt": "2026-11-19T13:17:03+05:30",
   "status": "live",
   "noticeCount": 31,
   "districtsDiscovered": 13,
@@ -18,12 +18,23 @@
       "scope": "district",
       "district": "Tehri Garhwal",
       "region": "Uttarakhand",
+      "category": "Tender",
+      "date": "2026-11-18",
+      "time": "",
+      "title": "E-Tender Notice Information (Jalagam Prabandhan)",
+      "description": "Open the official notice for the full details.",
+      "source": "https://cdn.s3waas.gov.in/s3258be18e31c8188555c2ff05b4d542c3/uploads/2026/11/17950737592519.pdf"
+    },
+    {
+      "scope": "district",
+      "district": "Tehri Garhwal",
+      "region": "Uttarakhand",
       "category": "Election",
       "date": "2026-11-17",
       "time": "",
       "title": "EVM Demonstration Schedule",
       "description": "Open the official notice for the full details.",
-      "source": "https://cdn.s3waas.gov.in/s3258be18e31c8188555c2ff05b4d542c3/uploads/2026/11/17949066639047.pdf"
+      "source": "https://cdn.s3waas.gov.in/s3258be18e31c8188555c2ff05b4d542c3/uploads/2026/11/17950739203442.pdf"
     },
     {
       "scope": "district",
@@ -134,17 +145,6 @@
       "title": "मा० मुख्यमंत्री उदीयमान छात्रवृति उन्नयन योजना वर्ष 2026-27 जनपद स्तर पर चयनित खिलाडियों की सूची",
       "description": "Open the official notice for the full details.",
       "source": "https://uttarkashi.nic.in/notice/%e0%a4%ae%e0%a4%be%e0%a5%a6-%e0%a4%ae%e0%a5%81%e0%a4%96%e0%a5%8d%e0%a4%af%e0%a4%ae%e0%a4%82%e0%a4%a4%e0%a5%8d%e0%a4%b0%e0%a5%80-%e0%a4%89%e0%a4%a6%e0%a5%80%e0%a4%af%e0%a4%ae%e0%a4%be%e0%a4%a8-2/"
-    },
-    {
-      "scope": "district",
-      "district": "Tehri Garhwal",
-      "region": "Uttarakhand",
-      "category": "Education",
-      "date": "2026-10-24",
-      "time": "",
-      "title": "Request for Quotation : Chief Education Officer Tehri Garhwal",
-      "description": "Open the official notice for the full details.",
-      "source": "https://cdn.s3waas.gov.in/s3258be18e31c8188555c2ff05b4d542c3/uploads/2026/10/17928216764706.pdf"
     },
     {
       "scope": "district",
