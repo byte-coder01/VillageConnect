@@ -94,3 +94,7 @@ All pages read one `villageconnect-shared-location` browser preference. Earlier 
 ### Privacy and Lighthouse note
 
 Google Maps embeds are now click-to-load. The site shows a local placeholder first and loads an embedded map only after the visitor selects **Load interactive map**. This avoids contacting Google Maps and loading its third-party cookies during the initial page load. The external **Open Google Maps** links remain available. Loading an embedded map may still cause Google to set cookies after the visitor opts in.
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/chart?repos=byte-coder01/villageconnect&type=date&legend=top-left)](https://www.star-history.com/)
