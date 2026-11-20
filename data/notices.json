@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T13:17:03+05:30",
+  "generatedAt": "2026-11-20T13:08:46+05:30",
   "status": "live",
   "noticeCount": 31,
   "districtsDiscovered": 13,
@@ -19,22 +19,22 @@
       "district": "Tehri Garhwal",
       "region": "Uttarakhand",
       "category": "Tender",
-      "date": "2026-11-18",
+      "date": "2026-11-19",
       "time": "",
-      "title": "E-Tender Notice Information (Jalagam Prabandhan)",
+      "title": "E-Tender Notice (Horticulture Department)",
       "description": "Open the official notice for the full details.",
-      "source": "https://cdn.s3waas.gov.in/s3258be18e31c8188555c2ff05b4d542c3/uploads/2026/11/17950737592519.pdf"
+      "source": "https://cdn.s3waas.gov.in/s3258be18e31c8188555c2ff05b4d542c3/uploads/2026/11/17950887325637.pdf"
     },
     {
       "scope": "district",
       "district": "Tehri Garhwal",
       "region": "Uttarakhand",
-      "category": "Election",
-      "date": "2026-11-17",
+      "category": "Tender",
+      "date": "2026-11-18",
       "time": "",
-      "title": "EVM Demonstration Schedule",
+      "title": "E-Tender Notice Information (Jalagam Prabandhan)",
       "description": "Open the official notice for the full details.",
-      "source": "https://cdn.s3waas.gov.in/s3258be18e31c8188555c2ff05b4d542c3/uploads/2026/11/17950739203442.pdf"
+      "source": "https://cdn.s3waas.gov.in/s3258be18e31c8188555c2ff05b4d542c3/uploads/2026/11/17950737592519.pdf"
     },
     {
       "scope": "district",
